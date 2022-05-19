@@ -16,16 +16,16 @@
       "connections": [],
       "id":"cell_15",
       "inputs": ["go" ],
-      "name":"Input Text",
-      "outputs": ["text" ],
-      "synccode":"&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, getText ('src'));&lt;/div&gt;"
+      "name":"Phrase Faker",
+      "outputs": ["short phrase", "long phrase" ],
+      "synccode":"&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;long phrase&quot;, &quot;I Want A Hamburger With Bacon&quot;);&lt;/div&gt;"
     }
   ],
   [
     {
       "children": [],
       "connections": [],
-      "id":"cell_20",
+      "id":"cell_22",
       "inputs": ["phrase" ],
       "name":"Phrase Parser",
       "outputs": ["order no choices", "order with choices", "parse error", "hook error" ],
@@ -34,15 +34,19 @@
   ],
   [
     {
-      "children": ["HTML Button", "Input Text", "Order Taker" ],
+      "children": ["HTML Button", "Phrase Faker", "Order Taker" ],
       "connections": [
 	{
-	  "receivers": [ {"receiver": {"component":"Input Text", "port":"go"}} ],
+	  "receivers": [ {"receiver": {"component":"Phrase Faker", "port":"go"}} ],
 	  "senders": [ {"sender": {"component":"HTML Button", "port":"click"}} ]
 	},
 	{
 	  "receivers": [ {"receiver": {"component":"Order Taker", "port":"phrase"}} ],
-	  "senders": [ {"sender": {"component":"Input Text", "port":"text"}} ]
+	  "senders": [ {"sender": {"component":"Phrase Faker", "port":"short phrase"}} ]
+	},
+	{
+	  "receivers": [ {"receiver": {"component":"Order Taker", "port":"phrase"}} ],
+	  "senders": [ {"sender": {"component":"Phrase Faker", "port":"long phrase"}} ]
 	},
 	{
 	  "receivers": [ {"receiver": {"component":"Test Bench", "port":"food order"}} ],
