@@ -136,11 +136,16 @@ function Test_Bench_makechildren (container) {
 }
 
 function Test_Bench_makeconnections (container) {
-    var conn6 = {sender:{name: "HTML Button", etag: "click"}, net: "NIY", receivers:  [{name: "junk1", etag: "go"}] };
-    var conn7 = {sender:{name: "HTML Button", etag: "click"}, net: "NIY", receivers:  [{name: "junk2", etag: "go"}] };
+    var conn6 = {
+	sender:{name: "HTML Button", etag: "click"},
+	net: "NIY",
+	receivers:  [{name: "junk1", etag: "go"},
+		     {name: "junk2", etag: "go"}
+		    ]
+    };
     var conn8 = {sender:{name: "junk1", etag: "text"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
     var conn9 = {sender:{name: "junk2", etag: "text"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
-    var connections = [ conn6, conn7, conn8, conn9 ];
+    var connections = [ conn6, conn8, conn9 ];
     return connections;
 }
 

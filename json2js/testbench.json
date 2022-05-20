@@ -3,7 +3,7 @@
     {
       "children": [],
       "connections": [],
-      "id":"cell_12",
+      "id":"cell_11",
       "inputs": [],
       "name":"HTML Button",
       "outputs": ["click" ],
@@ -18,14 +18,14 @@
       "inputs": ["go" ],
       "name":"Input Text",
       "outputs": ["text" ],
-      "synccode":"&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, getText ('src'));&lt;/div&gt;"
+      "synccode":"&lt;div&gt;console.log ('input 1');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, getText ('src'));&lt;/div&gt;"
     }
   ],
   [
     {
       "children": [],
       "connections": [],
-      "id":"cell_20",
+      "id":"cell_19",
       "inputs": ["phrase" ],
       "name":"Phrase Parser",
       "outputs": ["order no choices", "order with choices", "parse error", "hook error" ],
@@ -34,19 +34,45 @@
   ],
   [
     {
-      "children": ["HTML Button", "Input Text", "Order Taker" ],
+      "children": [],
+      "connections": [],
+      "id":"cell_31",
+      "inputs": ["go" ],
+      "name":"junk1",
+      "outputs": ["text" ],
+      "synccode":"&lt;div&gt;console.log ('junk1');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, {item:&quot;hello&quot;, extras: &quot;h extra&quot;, condiments: &quot;h condiments&quot;});&lt;/div&gt;"
+    }
+  ],
+  [
+    {
+      "children": [],
+      "connections": [],
+      "id":"cell_36",
+      "inputs": ["go" ],
+      "name":"junk2",
+      "outputs": ["text" ],
+      "synccode":"&lt;div&gt;console.log ('junk2');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, {item:&quot;goodbye&quot;, extras: &quot;g extra&quot;, condiments: &quot;g condiments&quot;});&lt;/div&gt;"
+    }
+  ],
+  [
+    {
+      "children": ["HTML Button", "Input Text", "junk1", "junk2", "Order Taker" ],
       "connections": [
 	{
-	  "receivers": [ {"receiver": {"component":"Input Text", "port":"go"}} ],
+	  "receivers": [ {"receiver": {"component":"junk1", "port":"go"}} ],
 	  "senders": [ {"sender": {"component":"HTML Button", "port":"click"}} ]
 	},
 	{
-	  "receivers": [ {"receiver": {"component":"Order Taker", "port":"phrase"}} ],
-	  "senders": [ {"sender": {"component":"Input Text", "port":"text"}} ]
+	  "receivers": [ {"receiver": {"component":"junk2", "port":"go"}} ],
+	  "senders": [ {"sender": {"component":"HTML Button", "port":"click"}} ]
 	},
 	{
 	  "receivers": [ {"receiver": {"component":"Test Bench", "port":"food order"}} ],
-	  "senders": [ {"sender": {"component":"Order Taker", "port":"food order"}} ]
+	  "senders": [ {"sender": {"component":"junk1", "port":"text"}} ]
+	},
+	{
+	  "receivers": [ {"receiver": {"component":"Test Bench", "port":"food order"}} ],
+	  "senders": [ {"sender": {"component":"junk2", "port":"text"}} ]
 	}
       ],
       "id":"cell_6",
@@ -60,10 +86,6 @@
     {
       "children": ["Phrase Parser" ],
       "connections": [
-	{
-	  "receivers": [ {"receiver": {"component":"Phrase Parser", "port":"phrase"}} ],
-	  "senders": [ {"sender": {"component":"Order Taker", "port":"phrase"}} ]
-	},
 	{
 	  "receivers": [ {"receiver": {"component":"Order Taker", "port":"food order"}} ],
 	  "senders": [ {"sender": {"component":"Phrase Parser", "port":"order no choices"}} ]
@@ -79,6 +101,10 @@
 	{
 	  "receivers": [ {"receiver": {"component":"Order Taker", "port":"food order"}} ],
 	  "senders": [ {"sender": {"component":"Phrase Parser", "port":"hook error"}} ]
+	},
+	{
+	  "receivers": [ {"receiver": {"component":"Phrase Parser", "port":"phrase"}} ],
+	  "senders": [ {"sender": {"component":"Order Taker", "port":"phrase"}} ]
 	}
       ],
       "id":"cell_7",

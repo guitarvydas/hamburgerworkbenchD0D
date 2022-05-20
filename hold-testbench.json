@@ -40,7 +40,7 @@
       "inputs": ["go" ],
       "name":"junk1",
       "outputs": ["text" ],
-      "synccode":"&lt;div&gt;console.log ('junk1');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, {item:&quot;hello&quot;, extras: &quot;h extra&quot;, condiments: &quot;h condiments&quot;});&lt;/div&gt;"
+      "synccode":"&lt;div&gt;console.log ('junk1');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, {item:&quot;hello&quot;, extras: &quot;extra&quot;, condiments: &quot;cond&quot;});&lt;/div&gt;"
     }
   ],
   [
@@ -51,7 +51,7 @@
       "inputs": ["go" ],
       "name":"junk2",
       "outputs": ["text" ],
-      "synccode":"&lt;div&gt;console.log ('junk2');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, {item:&quot;goodbye&quot;, extras: &quot;g extra&quot;, condiments: &quot;g condiments&quot;});&lt;/div&gt;"
+      "synccode":"&lt;div&gt;console.log ('junk2');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, {item:&quot;hello&quot;, extras: &quot;extra&quot;, condiments: &quot;cond&quot;});&lt;/div&gt;"
     }
   ],
   [

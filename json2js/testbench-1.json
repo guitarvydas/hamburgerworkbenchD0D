@@ -4,7 +4,7 @@
 {
 "children":[]
 "connections":[]
-"id":"cell_12"
+"id":"cell_11"
 "inputs":[]
 "name":"HTML Button"
 "outputs":["click"]
@@ -18,18 +18,38 @@
 "inputs":["go"]
 "name":"Input Text"
 "outputs":["text"]
-"synccode":"&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, getText ('src'));&lt;/div&gt;"}]
+"synccode":"&lt;div&gt;console.log ('input 1');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, getText ('src'));&lt;/div&gt;"}]
 [
 %name "Phrase Parser"
-{"children":[]"connections":[]"id":"cell_20""inputs":["phrase"]"name":"Phrase Parser""outputs":["order no choices""order with choices""parse error""hook error"]"synccode":""}]
+{"children":[]"connections":[]"id":"cell_19""inputs":["phrase"]"name":"Phrase Parser""outputs":["order no choices""order with choices""parse error""hook error"]"synccode":""}]
+[
+%name "junk1"
+{
+"children":[]
+"connections":[]
+"id":"cell_31"
+"inputs":["go"]
+"name":"junk1"
+"outputs":["text"]
+"synccode":"&lt;div&gt;console.log ('junk1');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, {item:&quot;hello&quot;, extras: &quot;h extra&quot;, condiments: &quot;h condiments&quot;});&lt;/div&gt;"}]
+[
+%name "junk2"
+{
+"children":[]
+"connections":[]
+"id":"cell_36"
+"inputs":["go"]
+"name":"junk2"
+"outputs":["text"]
+"synccode":"&lt;div&gt;console.log ('junk2');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, {item:&quot;goodbye&quot;, extras: &quot;g extra&quot;, condiments: &quot;g condiments&quot;});&lt;/div&gt;"}]
 [
 %name "Test Bench"
 {
-"children":["HTML Button""Input Text""Order Taker"]
+"children":["HTML Button""Input Text""junk1""junk2""Order Taker"]
 "connections":[{
 "receivers":[{
 "receiver":{
-"component":"Input Text"
+"component":"junk1"
 "port":"go"}}]
 "senders":[{
 "sender":{
@@ -37,11 +57,19 @@
 "port":"click"}}]},{
 "receivers":[{
 "receiver":{
-"component":"Order Taker"
-"port":"phrase"}}]
+"component":"junk2"
+"port":"go"}}]
 "senders":[{
 "sender":{
-"component":"Input Text"
+"component":"HTML Button"
+"port":"click"}}]},{
+"receivers":[{
+"receiver":{
+"component":"Test Bench"
+"port":"food order"}}]
+"senders":[{
+"sender":{
+"component":"junk1"
 "port":"text"}}]},{
 "receivers":[{
 "receiver":{
@@ -49,8 +77,8 @@
 "port":"food order"}}]
 "senders":[{
 "sender":{
-"component":"Order Taker"
-"port":"food order"}}]}]
+"component":"junk2"
+"port":"text"}}]}]
 "id":"cell_6"
 "inputs":[]
 "name":"Test Bench"
@@ -61,14 +89,6 @@
 {
 "children":["Phrase Parser"]
 "connections":[{
-"receivers":[{
-"receiver":{
-"component":"Phrase Parser"
-"port":"phrase"}}]
-"senders":[{
-"sender":{
-"component":"Order Taker"
-"port":"phrase"}}]},{
 "receivers":[{
 "receiver":{
 "component":"Order Taker"
@@ -100,7 +120,15 @@
 "senders":[{
 "sender":{
 "component":"Phrase Parser"
-"port":"hook error"}}]}]
+"port":"hook error"}}]},{
+"receivers":[{
+"receiver":{
+"component":"Phrase Parser"
+"port":"phrase"}}]
+"senders":[{
+"sender":{
+"component":"Order Taker"
+"port":"phrase"}}]}]
 "id":"cell_7"
 "inputs":["phrase"]
 "name":"Order Taker"
