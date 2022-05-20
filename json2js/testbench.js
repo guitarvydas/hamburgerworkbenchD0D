@@ -259,14 +259,13 @@ function Test_Bench_makechildren (container) {
 function Test_Bench_makeconnections (container) {
     var conn10 = {sender:{name: "HTML Button", etag: "click"}, net: "NIY", receivers:  [{name: "fanout", etag: "in"}] };
     var conn11 = {sender:{name: "junk1", etag: "text"}, net: "NIY", receivers:  [{name: "fanout again", etag: "in"}] };
-    var conn12 = {sender:{name: "junk2", etag: "text"}, net: "NIY", receivers:  [{name: "fanin", etag: "in2"}] };
-    var conn13 = {sender:{name: "junk3", etag: "text"}, net: "NIY", receivers:  [{name: "fanin", etag: "in3"}] };
+    var conn12 = {sender:{name: "junk2", etag: "text"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
+    var conn13 = {sender:{name: "junk3", etag: "text"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
     var conn14 = {sender:{name: "fanout", etag: "out1"}, net: "NIY", receivers:  [{name: "junk1", etag: "go"}] };
     var conn15 = {sender:{name: "fanout", etag: "out2"}, net: "NIY", receivers:  [{name: "junk2", etag: "go"}] };
-    var conn16 = {sender:{name: "fanout again", etag: "out1"}, net: "NIY", receivers:  [{name: "fanin", etag: "in1"}] };
+    var conn16 = {sender:{name: "fanout again", etag: "out1"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
     var conn17 = {sender:{name: "fanout again", etag: "out2"}, net: "NIY", receivers:  [{name: "junk3", etag: "text1"}] };
-    var conn18 = {sender:{name: "fanin", etag: "out"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
-    var connections = [ conn10, conn11, conn12, conn13, conn14, conn15, conn16, conn17, conn18 ];
+    var connections = [ conn10, conn11, conn12, conn13, conn14, conn15, conn16, conn17 ];
     return connections;
 }
 
@@ -305,18 +304,18 @@ var Order_Taker_signature = {
 
 
 function Order_Taker_makechildren (container) {
-      var child19 = new Phrase_Parser (container, "Phrase Parser");
-      var children = [ {name: "Phrase Parser", runnable: child19} ];
+      var child18 = new Phrase_Parser (container, "Phrase Parser");
+      var children = [ {name: "Phrase Parser", runnable: child18} ];
       return children;
 }
 
 function Order_Taker_makeconnections (container) {
-    var conn20 = {sender:{name: "Phrase Parser", etag: "order no choices"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
-    var conn21 = {sender:{name: "Phrase Parser", etag: "order with choices"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
-    var conn22 = {sender:{name: "Phrase Parser", etag: "parse error"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
-    var conn23 = {sender:{name: "Phrase Parser", etag: "hook error"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
-    var conn24 = {sender:{name: "_me", etag: "phrase"}, net: "NIY", receivers:  [{name: "Phrase Parser", etag: "phrase"}] };
-    var connections = [ conn20, conn21, conn22, conn23, conn24 ];
+    var conn19 = {sender:{name: "Phrase Parser", etag: "order no choices"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
+    var conn20 = {sender:{name: "Phrase Parser", etag: "order with choices"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
+    var conn21 = {sender:{name: "Phrase Parser", etag: "parse error"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
+    var conn22 = {sender:{name: "Phrase Parser", etag: "hook error"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
+    var conn23 = {sender:{name: "_me", etag: "phrase"}, net: "NIY", receivers:  [{name: "Phrase Parser", etag: "phrase"}] };
+    var connections = [ conn19, conn20, conn21, conn22, conn23 ];
     return connections;
 }
 

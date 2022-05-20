@@ -111,11 +111,11 @@
 	  "senders": [ {"sender": {"component":"junk1", "port":"text"}} ]
 	},
 	{
-	  "receivers": [ {"receiver": {"component":"fanin", "port":"in2"}} ],
+	  "receivers": [ {"receiver": {"component":"Test Bench", "port":"food order"}} ],
 	  "senders": [ {"sender": {"component":"junk2", "port":"text"}} ]
 	},
 	{
-	  "receivers": [ {"receiver": {"component":"fanin", "port":"in3"}} ],
+	  "receivers": [ {"receiver": {"component":"Test Bench", "port":"food order"}} ],
 	  "senders": [ {"sender": {"component":"junk3", "port":"text"}} ]
 	},
 	{
@@ -127,16 +127,12 @@
 	  "senders": [ {"sender": {"component":"fanout", "port":"out2"}} ]
 	},
 	{
-	  "receivers": [ {"receiver": {"component":"fanin", "port":"in1"}} ],
+	  "receivers": [ {"receiver": {"component":"Test Bench", "port":"food order"}} ],
 	  "senders": [ {"sender": {"component":"fanout again", "port":"out1"}} ]
 	},
 	{
 	  "receivers": [ {"receiver": {"component":"junk3", "port":"text1"}} ],
 	  "senders": [ {"sender": {"component":"fanout again", "port":"out2"}} ]
-	},
-	{
-	  "receivers": [ {"receiver": {"component":"Test Bench", "port":"food order"}} ],
-	  "senders": [ {"sender": {"component":"fanin", "port":"out"}} ]
 	}
       ],
       "id":"cell_6",

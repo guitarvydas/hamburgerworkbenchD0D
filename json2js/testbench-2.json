@@ -85,16 +85,16 @@
 "port":"text" }}]},{
 "receivers":[{
 "receiver":{
-"component":"fanin" 
-"port":"in2" }}]
+"component":"_me"
+"port":"food order" }}]
 "senders":[{
 "sender":{
 "component":"junk2" 
 "port":"text" }}]},{
 "receivers":[{
 "receiver":{
-"component":"fanin" 
-"port":"in3" }}]
+"component":"_me"
+"port":"food order" }}]
 "senders":[{
 "sender":{
 "component":"junk3" 
@@ -117,8 +117,8 @@
 "port":"out2" }}]},{
 "receivers":[{
 "receiver":{
-"component":"fanin" 
-"port":"in1" }}]
+"component":"_me"
+"port":"food order" }}]
 "senders":[{
 "sender":{
 "component":"fanout again" 
@@ -130,15 +130,7 @@
 "senders":[{
 "sender":{
 "component":"fanout again" 
-"port":"out2" }}]},{
-"receivers":[{
-"receiver":{
-"component":"_me"
-"port":"food order" }}]
-"senders":[{
-"sender":{
-"component":"fanin" 
-"port":"out" }}]}]
+"port":"out2" }}]}]
 "id":"cell_6" 
 "inputs":[]
 "name":"Test Bench" 
