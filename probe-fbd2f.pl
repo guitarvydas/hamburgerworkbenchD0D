@@ -767,7 +767,7 @@ diagram_fact(value, cell_48, "out1").
 diagram_fact(value, cell_49, "in").
 diagram_fact(value, cell_50, "&lt;div&gt;console.log ('fanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;br&gt;&lt;/div&gt;&lt;div&gt;var cloneddata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out2&quot;, cloneddata);&lt;br&gt;&lt;/div&gt;").
 diagram_fact(value, cell_52, "out2").
-diagram_fact(value, cell_53, "fanout again").
+diagram_fact(value, cell_53, "fanout").
 diagram_fact(value, cell_55, "out1").
 diagram_fact(value, cell_56, "in").
 diagram_fact(value, cell_58, "out2").
@@ -778,7 +778,7 @@ diagram_fact(value, cell_61, "in1").
 diagram_fact(value, cell_62, "&lt;div&gt;console.log ('fan in');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out&quot;, message.data);&lt;/div&gt;").
 diagram_fact(value, cell_63, "in2").
 diagram_fact(value, cell_64, "in3").
-diagram_fact(value, cell_65, "&lt;div&gt;console.log ('fanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;br&gt;&lt;/div&gt;&lt;div&gt;var cloneddata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out2&quot;, cloneddata);&lt;br&gt;&lt;/div&gt;").
+diagram_fact(value, cell_65, "&lt;div&gt;console.log ('xfanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;br&gt;&lt;/div&gt;&lt;div&gt;var cloneddata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out2&quot;, cloneddata);&lt;br&gt;&lt;/div&gt;").
 diagram_fact(value, cell_7, "Order Taker").
 diagram_fact(value, cell_8, "food order").
 diagram_fact(vertex, cell_10, 1).

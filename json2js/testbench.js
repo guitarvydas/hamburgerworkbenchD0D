@@ -178,20 +178,20 @@ function fanout (container, instancename) {
 
 
 
-var fanout_again_signature = {
-    name: "fanout_again",
+var fanout_signature = {
+    name: "fanout",
     inputs: [{name:"in", structure:["in"]}],
     outputs: [{name:"out1", structure:["out1"]}, {name:"out2", structure:["out2"]}]
 }
 
 
-var fanout_again_protoImplementation = {
-    name: "fanout_again",
+var fanout_protoImplementation = {
+    name: "fanout",
     kind: "leaf",
     begin: function () {},
     finish: function () {},
     handler: function (me, message) {
-        console.log ('fanout');
+        console.log ('xfanout');
     me.send ("out1", message.data);
 
 var cloneddata = Object.assign ({}, message.data);
@@ -201,8 +201,8 @@ var cloneddata = Object.assign ({}, message.data);
     }
 }
 
-function fanout_again (container, instancename) {
-    let me = new Leaf (fanout_again_signature, fanout_again_protoImplementation, container, instancename);
+function fanout (container, instancename) {
+    let me = new Leaf (fanout_signature, fanout_protoImplementation, container, instancename);
     return me;
 }
 
@@ -249,22 +249,22 @@ function Test_Bench_makechildren (container) {
         var child4 = new junk2 (container, "junk2");
         var child5 = new junk3 (container, "junk3");
         var child6 = new fanout (container, "fanout");
-        var child7 = new fanout_again (container, "fanout again");
+        var child7 = new fanout (container, "fanout");
         var child8 = new fanin (container, "fanin");
         var child9 = new Order_Taker (container, "Order Taker");
-      var children = [ {name: "HTML Button", runnable: child1}, {name: "Input Text", runnable: child2}, {name: "junk1", runnable: child3}, {name: "junk2", runnable: child4}, {name: "junk3", runnable: child5}, {name: "fanout", runnable: child6}, {name: "fanout again", runnable: child7}, {name: "fanin", runnable: child8}, {name: "Order Taker", runnable: child9} ];
+      var children = [ {name: "HTML Button", runnable: child1}, {name: "Input Text", runnable: child2}, {name: "junk1", runnable: child3}, {name: "junk2", runnable: child4}, {name: "junk3", runnable: child5}, {name: "fanout", runnable: child6}, {name: "fanout", runnable: child7}, {name: "fanin", runnable: child8}, {name: "Order Taker", runnable: child9} ];
       return children;
 }
 
 function Test_Bench_makeconnections (container) {
     var conn10 = {sender:{name: "HTML Button", etag: "click"}, net: "NIY", receivers:  [{name: "fanout", etag: "in"}] };
-    var conn11 = {sender:{name: "junk1", etag: "text"}, net: "NIY", receivers:  [{name: "fanout again", etag: "in"}] };
+    var conn11 = {sender:{name: "junk1", etag: "text"}, net: "NIY", receivers:  [{name: "fanout", etag: "in"}] };
     var conn12 = {sender:{name: "junk2", etag: "text"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
     var conn13 = {sender:{name: "junk3", etag: "text"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
     var conn14 = {sender:{name: "fanout", etag: "out1"}, net: "NIY", receivers:  [{name: "junk1", etag: "go"}] };
     var conn15 = {sender:{name: "fanout", etag: "out2"}, net: "NIY", receivers:  [{name: "junk2", etag: "go"}] };
-    var conn16 = {sender:{name: "fanout again", etag: "out1"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
-    var conn17 = {sender:{name: "fanout again", etag: "out2"}, net: "NIY", receivers:  [{name: "junk3", etag: "text1"}] };
+    var conn16 = {sender:{name: "fanout", etag: "out1"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
+    var conn17 = {sender:{name: "fanout", etag: "out2"}, net: "NIY", receivers:  [{name: "junk3", etag: "text1"}] };
     var connections = [ conn10, conn11, conn12, conn13, conn14, conn15, conn16, conn17 ];
     return connections;
 }
