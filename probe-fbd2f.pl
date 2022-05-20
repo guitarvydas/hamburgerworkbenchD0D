@@ -734,7 +734,7 @@ diagram_fact(width, cell_48, 40).
 diagram_fact(width, cell_49, 40).
 diagram_fact(width, cell_50, 270).
 diagram_fact(width, cell_52, 40).
-diagram_fact(width, cell_6, 1190).
+diagram_fact(width, cell_6, 1540).
 diagram_fact(width, cell_7, 330).
 diagram_fact(width, cell_8, 40).
 diagram_fact(x, cell_10, 810).
@@ -743,7 +743,7 @@ diagram_fact(x, cell_13, 230).
 diagram_fact(x, cell_14, 330).
 diagram_fact(x, cell_15, 690).
 diagram_fact(x, cell_16, 310).
-diagram_fact(x, cell_17, 1210).
+diagram_fact(x, cell_17, 1560).
 diagram_fact(x, cell_18, 910).
 diagram_fact(x, cell_20, 1010).
 diagram_fact(x, cell_21, 890).
@@ -779,7 +779,7 @@ diagram_fact(y, cell_13, -635).
 diagram_fact(y, cell_14, -670).
 diagram_fact(y, cell_15, -625).
 diagram_fact(y, cell_16, -635).
-diagram_fact(y, cell_17, -650).
+diagram_fact(y, cell_17, -660).
 diagram_fact(y, cell_18, -700).
 diagram_fact(y, cell_20, -675).
 diagram_fact(y, cell_21, -650).

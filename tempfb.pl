@@ -734,7 +734,7 @@ diagram_fact(width, cell_48, 40).
 diagram_fact(width, cell_49, 40).
 diagram_fact(width, cell_50, 270).
 diagram_fact(width, cell_52, 40).
-diagram_fact(width, cell_6, 1190).
+diagram_fact(width, cell_6, 1540).
 diagram_fact(width, cell_7, 330).
 diagram_fact(width, cell_8, 40).
 diagram_fact(x, cell_10, 810).
@@ -743,7 +743,7 @@ diagram_fact(x, cell_13, 230).
 diagram_fact(x, cell_14, 330).
 diagram_fact(x, cell_15, 690).
 diagram_fact(x, cell_16, 310).
-diagram_fact(x, cell_17, 1210).
+diagram_fact(x, cell_17, 1560).
 diagram_fact(x, cell_18, 910).
 diagram_fact(x, cell_20, 1010).
 diagram_fact(x, cell_21, 890).
@@ -779,7 +779,7 @@ diagram_fact(y, cell_13, -635).
 diagram_fact(y, cell_14, -670).
 diagram_fact(y, cell_15, -625).
 diagram_fact(y, cell_16, -635).
-diagram_fact(y, cell_17, -650).
+diagram_fact(y, cell_17, -660).
 diagram_fact(y, cell_18, -700).
 diagram_fact(y, cell_20, -675).
 diagram_fact(y, cell_21, -650).
@@ -970,10 +970,10 @@ das_fact(bbL,cell_16,310).
   das_fact(bbT,cell_16,-635).
   das_fact(bbR,cell_16,350).
   das_fact(bbB,cell_16,-595).
-das_fact(bbL,cell_17,1210).
-  das_fact(bbT,cell_17,-650).
-  das_fact(bbR,cell_17,1250).
-  das_fact(bbB,cell_17,-610).
+das_fact(bbL,cell_17,1560).
+  das_fact(bbT,cell_17,-660).
+  das_fact(bbR,cell_17,1600).
+  das_fact(bbB,cell_17,-620).
 das_fact(bbL,cell_18,910).
   das_fact(bbT,cell_18,-700).
   das_fact(bbR,cell_18,1030).
@@ -1080,7 +1080,7 @@ das_fact(bbL,cell_52,640).
   das_fact(bbB,cell_52,-195).
 das_fact(bbL,cell_6,40).
   das_fact(bbT,cell_6,-780).
-  das_fact(bbR,cell_6,1230).
+  das_fact(bbR,cell_6,1580).
   das_fact(bbB,cell_6,280).
 das_fact(bbL,cell_7,830).
   das_fact(bbT,cell_7,-735).
