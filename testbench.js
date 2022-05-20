@@ -79,8 +79,10 @@ var junk1_protoImplementation = {
     finish: function () {},
     handler: function (me, message) {
         console.log ('junk1');
-    me.send ("text", {item:"hello", extras: "h extra", condiments: "h condiments"});
+    var data = {item:"hello", extras: "h extra", condiments: "h condiments"};
 
+console.log (data);
+    me.send ("text", data);
     }
 }
 
@@ -131,7 +133,10 @@ var junk3_protoImplementation = {
     finish: function () {},
     handler: function (me, message) {
         console.log ('test 3');
-    me.send ("text", message.data);
+var newdata = message.data
+newdata.item = "test3 ... " + message.data.item;
+    console.log (newdata);
+me.send ("text", newdata);
 
     }
 }
@@ -159,7 +164,8 @@ var fanout_protoImplementation = {
         console.log ('fanout');
     me.send ("out1", message.data);
 
-    me.send ("out2", message.data);
+var cloneddata = Object.assign ({}, message.data);
+    me.send ("out2", cloneddata);
 
 
     }
@@ -167,6 +173,62 @@ var fanout_protoImplementation = {
 
 function fanout (container, instancename) {
     let me = new Leaf (fanout_signature, fanout_protoImplementation, container, instancename);
+    return me;
+}
+
+
+
+var fanout_again_signature = {
+    name: "fanout_again",
+    inputs: [{name:"in", structure:["in"]}],
+    outputs: [{name:"out1", structure:["out1"]}, {name:"out2", structure:["out2"]}]
+}
+
+
+var fanout_again_protoImplementation = {
+    name: "fanout_again",
+    kind: "leaf",
+    begin: function () {},
+    finish: function () {},
+    handler: function (me, message) {
+        console.log ('fanout');
+    me.send ("out1", message.data);
+
+var cloneddata = Object.assign ({}, message.data);
+    me.send ("out2", cloneddata);
+
+
+    }
+}
+
+function fanout_again (container, instancename) {
+    let me = new Leaf (fanout_again_signature, fanout_again_protoImplementation, container, instancename);
+    return me;
+}
+
+
+
+var fanin_signature = {
+    name: "fanin",
+    inputs: [{name:"in1", structure:["in1"]}, {name:"in2", structure:["in2"]}, {name:"in3", structure:["in3"]}],
+    outputs: [{name:"out", structure:["out"]}]
+}
+
+
+var fanin_protoImplementation = {
+    name: "fanin",
+    kind: "leaf",
+    begin: function () {},
+    finish: function () {},
+    handler: function (me, message) {
+        console.log ('fan in');
+    me.send ("out", message.data);
+
+    }
+}
+
+function fanin (container, instancename) {
+    let me = new Leaf (fanin_signature, fanin_protoImplementation, container, instancename);
     return me;
 }
 
@@ -187,19 +249,24 @@ function Test_Bench_makechildren (container) {
         var child4 = new junk2 (container, "junk2");
         var child5 = new junk3 (container, "junk3");
         var child6 = new fanout (container, "fanout");
-        var child7 = new Order_Taker (container, "Order Taker");
-      var children = [ {name: "HTML Button", runnable: child1}, {name: "Input Text", runnable: child2}, {name: "junk1", runnable: child3}, {name: "junk2", runnable: child4}, {name: "junk3", runnable: child5}, {name: "fanout", runnable: child6}, {name: "Order Taker", runnable: child7} ];
+        var child7 = new fanout_again (container, "fanout again");
+        var child8 = new fanin (container, "fanin");
+        var child9 = new Order_Taker (container, "Order Taker");
+      var children = [ {name: "HTML Button", runnable: child1}, {name: "Input Text", runnable: child2}, {name: "junk1", runnable: child3}, {name: "junk2", runnable: child4}, {name: "junk3", runnable: child5}, {name: "fanout", runnable: child6}, {name: "fanout again", runnable: child7}, {name: "fanin", runnable: child8}, {name: "Order Taker", runnable: child9} ];
       return children;
 }
 
 function Test_Bench_makeconnections (container) {
-    var conn8 = {sender:{name: "HTML Button", etag: "click"}, net: "NIY", receivers:  [{name: "fanout", etag: "in"}] };
-    var conn9 = {sender:{name: "junk1", etag: "text"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
-    var conn10 = {sender:{name: "junk2", etag: "text"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
-    var conn11 = {sender:{name: "junk3", etag: "text"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
-    var conn12 = {sender:{name: "fanout", etag: "out1"}, net: "NIY", receivers:  [{name: "junk1", etag: "go"}] };
-    var conn13 = {sender:{name: "fanout", etag: "out2"}, net: "NIY", receivers:  [{name: "junk2", etag: "go"}] };
-    var connections = [ conn8, conn9, conn10, conn11, conn12, conn13 ];
+    var conn10 = {sender:{name: "HTML Button", etag: "click"}, net: "NIY", receivers:  [{name: "fanout", etag: "in"}] };
+    var conn11 = {sender:{name: "junk1", etag: "text"}, net: "NIY", receivers:  [{name: "fanout again", etag: "in"}] };
+    var conn12 = {sender:{name: "junk2", etag: "text"}, net: "NIY", receivers:  [{name: "fanin", etag: "in2"}] };
+    var conn13 = {sender:{name: "junk3", etag: "text"}, net: "NIY", receivers:  [{name: "fanin", etag: "in3"}] };
+    var conn14 = {sender:{name: "fanout", etag: "out1"}, net: "NIY", receivers:  [{name: "junk1", etag: "go"}] };
+    var conn15 = {sender:{name: "fanout", etag: "out2"}, net: "NIY", receivers:  [{name: "junk2", etag: "go"}] };
+    var conn16 = {sender:{name: "fanout again", etag: "out1"}, net: "NIY", receivers:  [{name: "fanin", etag: "in1"}] };
+    var conn17 = {sender:{name: "fanout again", etag: "out2"}, net: "NIY", receivers:  [{name: "junk3", etag: "text1"}] };
+    var conn18 = {sender:{name: "fanin", etag: "out"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
+    var connections = [ conn10, conn11, conn12, conn13, conn14, conn15, conn16, conn17, conn18 ];
     return connections;
 }
 
@@ -238,18 +305,18 @@ var Order_Taker_signature = {
 
 
 function Order_Taker_makechildren (container) {
-      var child14 = new Phrase_Parser (container, "Phrase Parser");
-      var children = [ {name: "Phrase Parser", runnable: child14} ];
+      var child19 = new Phrase_Parser (container, "Phrase Parser");
+      var children = [ {name: "Phrase Parser", runnable: child19} ];
       return children;
 }
 
 function Order_Taker_makeconnections (container) {
-    var conn15 = {sender:{name: "Phrase Parser", etag: "order no choices"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
-    var conn16 = {sender:{name: "Phrase Parser", etag: "order with choices"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
-    var conn17 = {sender:{name: "Phrase Parser", etag: "parse error"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
-    var conn18 = {sender:{name: "Phrase Parser", etag: "hook error"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
-    var conn19 = {sender:{name: "_me", etag: "phrase"}, net: "NIY", receivers:  [{name: "Phrase Parser", etag: "phrase"}] };
-    var connections = [ conn15, conn16, conn17, conn18, conn19 ];
+    var conn20 = {sender:{name: "Phrase Parser", etag: "order no choices"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
+    var conn21 = {sender:{name: "Phrase Parser", etag: "order with choices"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
+    var conn22 = {sender:{name: "Phrase Parser", etag: "parse error"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
+    var conn23 = {sender:{name: "Phrase Parser", etag: "hook error"}, net: "NIY", receivers:  [{name: "_me", etag: "food order"}] };
+    var conn24 = {sender:{name: "_me", etag: "phrase"}, net: "NIY", receivers:  [{name: "Phrase Parser", etag: "phrase"}] };
+    var connections = [ conn20, conn21, conn22, conn23, conn24 ];
     return connections;
 }
 
