@@ -62,7 +62,7 @@
       "inputs": ["text1", "text2" ],
       "name":"junk3",
       "outputs": ["text" ],
-      "synccode":"&lt;div&gt;console.log ('test 3');&lt;/div&gt;&lt;div&gt;var newdata = message.data&lt;/div&gt;&lt;div&gt;newdata.item = &quot;test3 ... &quot; + message.data.item;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; console.log (newdata);&lt;/div&gt;&lt;div&gt;me.send (&quot;text&quot;, newdata);&lt;/div&gt;"
+      "synccode":"&lt;div&gt;console.log ('test 3');&lt;/div&gt;&lt;div&gt;var newdata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;newdata.item = &quot;test3 ... &quot; + message.data.item;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; console.log (newdata);&lt;/div&gt;&lt;div&gt;me.send (&quot;text&quot;, newdata);&lt;/div&gt;"
     }
   ],
   [
@@ -73,7 +73,7 @@
       "inputs": ["in" ],
       "name":"fanout",
       "outputs": ["out1", "out2" ],
-      "synccode":"&lt;div&gt;console.log ('fanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;br&gt;&lt;/div&gt;&lt;div&gt;var cloneddata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out2&quot;, cloneddata);&lt;br&gt;&lt;/div&gt;"
+      "synccode":"&lt;div&gt;console.log ('fanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;/div&gt;&lt;div&gt;me.send (&quot;out2&quot;, message.data);&lt;/div&gt;"
     }
   ],
   [
@@ -82,9 +82,9 @@
       "connections": [],
       "id":"cell_53",
       "inputs": ["in" ],
-      "name":"fanout",
+      "name":"fanout x",
       "outputs": ["out1", "out2" ],
-      "synccode":"&lt;div&gt;console.log ('xfanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;br&gt;&lt;/div&gt;&lt;div&gt;var cloneddata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out2&quot;, cloneddata);&lt;br&gt;&lt;/div&gt;"
+      "synccode":"&lt;div&gt;console.log ('xfanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;/div&gt;&lt;div&gt;me.send(&quot;out2&quot;, message.data);&lt;/div&gt;"
     }
   ],
   [
@@ -100,14 +100,14 @@
   ],
   [
     {
-      "children": ["HTML Button", "Input Text", "junk1", "junk2", "junk3", "fanout", "fanout", "fanin", "Order Taker" ],
+      "children": ["HTML Button", "Input Text", "junk1", "junk2", "junk3", "fanout", "fanout x", "fanin", "Order Taker" ],
       "connections": [
 	{
 	  "receivers": [ {"receiver": {"component":"fanout", "port":"in"}} ],
 	  "senders": [ {"sender": {"component":"HTML Button", "port":"click"}} ]
 	},
 	{
-	  "receivers": [ {"receiver": {"component":"fanout", "port":"in"}} ],
+	  "receivers": [ {"receiver": {"component":"fanout x", "port":"in"}} ],
 	  "senders": [ {"sender": {"component":"junk1", "port":"text"}} ]
 	},
 	{
@@ -128,11 +128,11 @@
 	},
 	{
 	  "receivers": [ {"receiver": {"component":"Test Bench", "port":"food order"}} ],
-	  "senders": [ {"sender": {"component":"fanout", "port":"out1"}} ]
+	  "senders": [ {"sender": {"component":"fanout x", "port":"out1"}} ]
 	},
 	{
 	  "receivers": [ {"receiver": {"component":"junk3", "port":"text1"}} ],
-	  "senders": [ {"sender": {"component":"fanout", "port":"out2"}} ]
+	  "senders": [ {"sender": {"component":"fanout x", "port":"out2"}} ]
 	}
       ],
       "id":"cell_6",
