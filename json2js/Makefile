@@ -5,8 +5,8 @@ src=../testbench.json
 target=`basename ${src} .json`
 here=`pwd`
 
-src2=../testbench2.json
-target2=`basename ${src2} .json`
+scriptsrc=../script.json
+scripttarget=`basename ${scriptsrc} .json`
 
 xg=ASCxform
 xfmt1=../json2xform/xdjson.fmt
@@ -19,8 +19,10 @@ dev:
 	${prep} "." '$$' ${grammar} ${format} --stop=1 --fmt=${here}/fmt.js --grammarname=ASC2py --errorview <${target}-2.json >${target}.js
 #  	cat ${target}.js
 
-dev2:
-	cp ${src2} .
-	${prep} "." '$$' ${grammar} ${xfmt1} --stop=1 --fmt=${here}/fmt.js --grammarname=${xg} --erroview <${src2} >${target2}-1.json
-	${prep} "." '$$' ${grammar} ${xfmt2} --stop=1 --fmt=${here}/fmt.js --grammarname=${xg} --erroview <${target2}-1.json >${target2}-2.json
-	${prep} "." '$$' ${grammar} ${format} --stop=1 --fmt=${here}/fmt.js --grammarname=ASC2py --errorview <${target2}-2.json >${target2}.js
+script:
+	cp ${scriptsrc} .
+	${prep} "." '$$' ${grammar} ${xfmt1} --stop=1 --fmt=${here}/fmt.js --grammarname=${xg} --erroview <${scriptsrc} >${scripttarget}-1.json
+	${prep} "." '$$' ${grammar} ${xfmt2} --stop=1 --fmt=${here}/fmt.js --grammarname=${xg} --erroview <${scripttarget}-1.json >${scripttarget}-2.json
+	${prep} "." '$$' ${grammar} ${format} --stop=1 --fmt=${here}/fmt.js --grammarname=ASC2py --errorview <${scripttarget}-2.json >${scripttarget}.js
+#  	cat ${target}.js
+

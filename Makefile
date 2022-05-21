@@ -16,7 +16,7 @@ script.json:
 	./d2json script.drawio >script.json
 
 script.js: script.json
-	(cd json2js ; make dev)
+	(cd json2js ; make script)
 	cp json2js/script.js .
 
 
