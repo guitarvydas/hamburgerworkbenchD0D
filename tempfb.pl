@@ -767,7 +767,7 @@ diagram_fact(value, cell_48, "out1").
 diagram_fact(value, cell_49, "in").
 diagram_fact(value, cell_50, "&lt;div&gt;console.log ('fanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;br&gt;&lt;/div&gt;&lt;div&gt;var cloneddata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out2&quot;, cloneddata);&lt;br&gt;&lt;/div&gt;").
 diagram_fact(value, cell_52, "out2").
-diagram_fact(value, cell_53, "fanout").
+diagram_fact(value, cell_53, "fanout x").
 diagram_fact(value, cell_55, "out1").
 diagram_fact(value, cell_56, "in").
 diagram_fact(value, cell_58, "out2").
@@ -1123,7 +1123,7 @@ das_fact(name, cell_48, "out1").
 das_fact(name, cell_49, "in").
 das_fact(name, cell_50, "&lt;div&gt;console.log ('fanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;br&gt;&lt;/div&gt;&lt;div&gt;var cloneddata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out2&quot;, cloneddata);&lt;br&gt;&lt;/div&gt;").
 das_fact(name, cell_52, "out2").
-das_fact(name, cell_53, "fanout").
+das_fact(name, cell_53, "fanout x").
 das_fact(name, cell_55, "out1").
 das_fact(name, cell_56, "in").
 das_fact(name, cell_58, "out2").
@@ -1642,7 +1642,7 @@ das_fact(sender, cell_26, sender{component:"Phrase Parser",port:"hook error"}).
 das_fact(receiver, cell_26, receiver{component:"Order Taker",port:"food order"}).
 das_fact(connection, cell_6, cell_31).
 das_fact(sender, cell_31, sender{component:"junk1",port:"text"}).
-das_fact(receiver, cell_31, receiver{component:"fanout",port:"in"}).
+das_fact(receiver, cell_31, receiver{component:"fanout x",port:"in"}).
 das_fact(connection, cell_6, cell_36).
 das_fact(sender, cell_36, sender{component:"junk2",port:"text"}).
 das_fact(receiver, cell_36, receiver{component:"Test Bench",port:"food order"}).
@@ -1656,10 +1656,10 @@ das_fact(connection, cell_6, cell_51).
 das_fact(sender, cell_51, sender{component:"fanout",port:"out2"}).
 das_fact(receiver, cell_51, receiver{component:"junk2",port:"go"}).
 das_fact(connection, cell_6, cell_54).
-das_fact(sender, cell_54, sender{component:"fanout",port:"out1"}).
+das_fact(sender, cell_54, sender{component:"fanout x",port:"out1"}).
 das_fact(receiver, cell_54, receiver{component:"Test Bench",port:"food order"}).
 das_fact(connection, cell_6, cell_57).
-das_fact(sender, cell_57, sender{component:"fanout",port:"out2"}).
+das_fact(sender, cell_57, sender{component:"fanout x",port:"out2"}).
 das_fact(receiver, cell_57, receiver{component:"junk3",port:"text1"}).
 das_fact(connection, cell_7, cell_9).
 das_fact(sender, cell_9, sender{component:"Order Taker",port:"phrase"}).
