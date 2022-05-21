@@ -2,7 +2,7 @@ prep=./prep/prep
 cwd=`pwd`
 support=--support=${cwd}/support.js
 
-all: clean main.js testbench.json testbench.js
+all: clean main.js testbench.json testbench.js script.js
 	@echo Now, load 'hamburgerworkbench0d/hamburger0d.html' into a browser
 
 testbench.json:
@@ -11,6 +11,13 @@ testbench.json:
 testbench.js: testbench.json
 	(cd json2js ; make dev)
 	cp json2js/testbench.js .
+
+script.json:
+	./d2json script.drawio >script.json
+
+script.js: script.json
+	(cd json2js ; make dev)
+	cp json2js/script.js .
 
 
 
