@@ -18,3 +18,9 @@ supported but not atomic:
   - etag demultiplexor is hidden in certain variants (ag macros)
   - fanout is hidden in certain variants (ag macros)
   - bounded queues are hidden in (FBP macros)
+
+
+Note to self:
+```
+var cloneddata = Object.assign ({}, message.data);
+```

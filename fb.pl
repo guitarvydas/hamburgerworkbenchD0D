@@ -760,12 +760,12 @@ diagram_fact(value, cell_39, "&lt;div&gt;console.log ('junk2');&lt;/div&gt;&lt;d
 diagram_fact(value, cell_40, "junk3").
 diagram_fact(value, cell_42, "text").
 diagram_fact(value, cell_43, "text1").
-diagram_fact(value, cell_44, "&lt;div&gt;console.log ('test 3');&lt;/div&gt;&lt;div&gt;var newdata = message.data&lt;/div&gt;&lt;div&gt;newdata.item = &quot;test3 ... &quot; + message.data.item;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; console.log (newdata);&lt;/div&gt;&lt;div&gt;me.send (&quot;text&quot;, newdata);&lt;/div&gt;").
+diagram_fact(value, cell_44, "&lt;div&gt;console.log ('test 3');&lt;/div&gt;&lt;div&gt;var newdata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;newdata.item = &quot;test3 ... &quot; + message.data.item;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; console.log (newdata);&lt;/div&gt;&lt;div&gt;me.send (&quot;text&quot;, newdata);&lt;/div&gt;").
 diagram_fact(value, cell_45, "text2").
 diagram_fact(value, cell_46, "fanout").
 diagram_fact(value, cell_48, "out1").
 diagram_fact(value, cell_49, "in").
-diagram_fact(value, cell_50, "&lt;div&gt;console.log ('fanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;br&gt;&lt;/div&gt;&lt;div&gt;var cloneddata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out2&quot;, cloneddata);&lt;br&gt;&lt;/div&gt;").
+diagram_fact(value, cell_50, "&lt;div&gt;console.log ('fanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;/div&gt;&lt;div&gt;me.send (&quot;out2&quot;, message.data);&lt;/div&gt;").
 diagram_fact(value, cell_52, "out2").
 diagram_fact(value, cell_53, "fanout x").
 diagram_fact(value, cell_55, "out1").
@@ -778,7 +778,7 @@ diagram_fact(value, cell_61, "in1").
 diagram_fact(value, cell_62, "&lt;div&gt;console.log ('fan in');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out&quot;, message.data);&lt;/div&gt;").
 diagram_fact(value, cell_63, "in2").
 diagram_fact(value, cell_64, "in3").
-diagram_fact(value, cell_65, "&lt;div&gt;console.log ('xfanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;br&gt;&lt;/div&gt;&lt;div&gt;var cloneddata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out2&quot;, cloneddata);&lt;br&gt;&lt;/div&gt;").
+diagram_fact(value, cell_65, "&lt;div&gt;console.log ('xfanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;/div&gt;&lt;div&gt;me.send(&quot;out2&quot;, message.data);&lt;/div&gt;").
 diagram_fact(value, cell_7, "Order Taker").
 diagram_fact(value, cell_8, "food order").
 diagram_fact(vertex, cell_10, 1).
@@ -1116,12 +1116,12 @@ das_fact(name, cell_39, "&lt;div&gt;console.log ('junk2');&lt;/div&gt;&lt;div&gt
 das_fact(name, cell_40, "junk3").
 das_fact(name, cell_42, "text").
 das_fact(name, cell_43, "text1").
-das_fact(name, cell_44, "&lt;div&gt;console.log ('test 3');&lt;/div&gt;&lt;div&gt;var newdata = message.data&lt;/div&gt;&lt;div&gt;newdata.item = &quot;test3 ... &quot; + message.data.item;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; console.log (newdata);&lt;/div&gt;&lt;div&gt;me.send (&quot;text&quot;, newdata);&lt;/div&gt;").
+das_fact(name, cell_44, "&lt;div&gt;console.log ('test 3');&lt;/div&gt;&lt;div&gt;var newdata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;newdata.item = &quot;test3 ... &quot; + message.data.item;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; console.log (newdata);&lt;/div&gt;&lt;div&gt;me.send (&quot;text&quot;, newdata);&lt;/div&gt;").
 das_fact(name, cell_45, "text2").
 das_fact(name, cell_46, "fanout").
 das_fact(name, cell_48, "out1").
 das_fact(name, cell_49, "in").
-das_fact(name, cell_50, "&lt;div&gt;console.log ('fanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;br&gt;&lt;/div&gt;&lt;div&gt;var cloneddata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out2&quot;, cloneddata);&lt;br&gt;&lt;/div&gt;").
+das_fact(name, cell_50, "&lt;div&gt;console.log ('fanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;/div&gt;&lt;div&gt;me.send (&quot;out2&quot;, message.data);&lt;/div&gt;").
 das_fact(name, cell_52, "out2").
 das_fact(name, cell_53, "fanout x").
 das_fact(name, cell_55, "out1").
@@ -1134,7 +1134,7 @@ das_fact(name, cell_61, "in1").
 das_fact(name, cell_62, "&lt;div&gt;console.log ('fan in');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out&quot;, message.data);&lt;/div&gt;").
 das_fact(name, cell_63, "in2").
 das_fact(name, cell_64, "in3").
-das_fact(name, cell_65, "&lt;div&gt;console.log ('xfanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;br&gt;&lt;/div&gt;&lt;div&gt;var cloneddata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out2&quot;, cloneddata);&lt;br&gt;&lt;/div&gt;").
+das_fact(name, cell_65, "&lt;div&gt;console.log ('xfanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;/div&gt;&lt;div&gt;me.send(&quot;out2&quot;, message.data);&lt;/div&gt;").
 das_fact(name, cell_7, "Order Taker").
 das_fact(name, cell_8, "food order").
 
@@ -1620,10 +1620,10 @@ das_fact(codebox,cell_28,"me.send (&quot;click&quot;, true);").
 das_fact(codebox,cell_29,"&lt;div&gt;console.log ('input 1');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, getText ('src'));&lt;/div&gt;").
 das_fact(codebox,cell_34,"&lt;div&gt;console.log ('junk1');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; var data = {item:&quot;hello&quot;, extras: &quot;h extra&quot;, condiments: &quot;h condiments&quot;};&lt;br&gt;&lt;/div&gt;&lt;div&gt;console.log (data);&lt;/div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, data);").
 das_fact(codebox,cell_39,"&lt;div&gt;console.log ('junk2');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, {item:&quot;goodbye&quot;, extras: &quot;g extra&quot;, condiments: &quot;g condiments&quot;});&lt;/div&gt;").
-das_fact(codebox,cell_44,"&lt;div&gt;console.log ('test 3');&lt;/div&gt;&lt;div&gt;var newdata = message.data&lt;/div&gt;&lt;div&gt;newdata.item = &quot;test3 ... &quot; + message.data.item;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; console.log (newdata);&lt;/div&gt;&lt;div&gt;me.send (&quot;text&quot;, newdata);&lt;/div&gt;").
-das_fact(codebox,cell_50,"&lt;div&gt;console.log ('fanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;br&gt;&lt;/div&gt;&lt;div&gt;var cloneddata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out2&quot;, cloneddata);&lt;br&gt;&lt;/div&gt;").
+das_fact(codebox,cell_44,"&lt;div&gt;console.log ('test 3');&lt;/div&gt;&lt;div&gt;var newdata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;newdata.item = &quot;test3 ... &quot; + message.data.item;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; console.log (newdata);&lt;/div&gt;&lt;div&gt;me.send (&quot;text&quot;, newdata);&lt;/div&gt;").
+das_fact(codebox,cell_50,"&lt;div&gt;console.log ('fanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;/div&gt;&lt;div&gt;me.send (&quot;out2&quot;, message.data);&lt;/div&gt;").
 das_fact(codebox,cell_62,"&lt;div&gt;console.log ('fan in');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out&quot;, message.data);&lt;/div&gt;").
-das_fact(codebox,cell_65,"&lt;div&gt;console.log ('xfanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;br&gt;&lt;/div&gt;&lt;div&gt;var cloneddata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out2&quot;, cloneddata);&lt;br&gt;&lt;/div&gt;").
+das_fact(codebox,cell_65,"&lt;div&gt;console.log ('xfanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;/div&gt;&lt;div&gt;me.send(&quot;out2&quot;, message.data);&lt;/div&gt;").
 
 das_fact(connection, cell_6, cell_12).
 das_fact(sender, cell_12, sender{component:"HTML Button",port:"click"}).

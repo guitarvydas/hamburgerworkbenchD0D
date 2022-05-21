@@ -760,12 +760,12 @@ diagram_fact(value, cell_39, "&lt;div&gt;console.log ('junk2');&lt;/div&gt;&lt;d
 diagram_fact(value, cell_40, "junk3").
 diagram_fact(value, cell_42, "text").
 diagram_fact(value, cell_43, "text1").
-diagram_fact(value, cell_44, "&lt;div&gt;console.log ('test 3');&lt;/div&gt;&lt;div&gt;var newdata = message.data&lt;/div&gt;&lt;div&gt;newdata.item = &quot;test3 ... &quot; + message.data.item;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; console.log (newdata);&lt;/div&gt;&lt;div&gt;me.send (&quot;text&quot;, newdata);&lt;/div&gt;").
+diagram_fact(value, cell_44, "&lt;div&gt;console.log ('test 3');&lt;/div&gt;&lt;div&gt;var newdata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;newdata.item = &quot;test3 ... &quot; + message.data.item;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; console.log (newdata);&lt;/div&gt;&lt;div&gt;me.send (&quot;text&quot;, newdata);&lt;/div&gt;").
 diagram_fact(value, cell_45, "text2").
 diagram_fact(value, cell_46, "fanout").
 diagram_fact(value, cell_48, "out1").
 diagram_fact(value, cell_49, "in").
-diagram_fact(value, cell_50, "&lt;div&gt;console.log ('fanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;br&gt;&lt;/div&gt;&lt;div&gt;var cloneddata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out2&quot;, cloneddata);&lt;br&gt;&lt;/div&gt;").
+diagram_fact(value, cell_50, "&lt;div&gt;console.log ('fanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;/div&gt;&lt;div&gt;me.send (&quot;out2&quot;, message.data);&lt;/div&gt;").
 diagram_fact(value, cell_52, "out2").
 diagram_fact(value, cell_53, "fanout x").
 diagram_fact(value, cell_55, "out1").
@@ -778,7 +778,7 @@ diagram_fact(value, cell_61, "in1").
 diagram_fact(value, cell_62, "&lt;div&gt;console.log ('fan in');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out&quot;, message.data);&lt;/div&gt;").
 diagram_fact(value, cell_63, "in2").
 diagram_fact(value, cell_64, "in3").
-diagram_fact(value, cell_65, "&lt;div&gt;console.log ('xfanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;br&gt;&lt;/div&gt;&lt;div&gt;var cloneddata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out2&quot;, cloneddata);&lt;br&gt;&lt;/div&gt;").
+diagram_fact(value, cell_65, "&lt;div&gt;console.log ('xfanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;/div&gt;&lt;div&gt;me.send(&quot;out2&quot;, message.data);&lt;/div&gt;").
 diagram_fact(value, cell_7, "Order Taker").
 diagram_fact(value, cell_8, "food order").
 diagram_fact(vertex, cell_10, 1).

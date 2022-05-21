@@ -133,7 +133,7 @@ var junk3_protoImplementation = {
     finish: function () {},
     handler: function (me, message) {
         console.log ('test 3');
-var newdata = message.data
+var newdata = Object.assign ({}, message.data);
 newdata.item = "test3 ... " + message.data.item;
     console.log (newdata);
 me.send ("text", newdata);
@@ -163,10 +163,7 @@ var fanout_protoImplementation = {
     handler: function (me, message) {
         console.log ('fanout');
     me.send ("out1", message.data);
-
-var cloneddata = Object.assign ({}, message.data);
-    me.send ("out2", cloneddata);
-
+me.send ("out2", message.data);
 
     }
 }
@@ -193,10 +190,7 @@ var fanout_x_protoImplementation = {
     handler: function (me, message) {
         console.log ('xfanout');
     me.send ("out1", message.data);
-
-var cloneddata = Object.assign ({}, message.data);
-    me.send ("out2", cloneddata);
-
+me.send("out2", message.data);
 
     }
 }
