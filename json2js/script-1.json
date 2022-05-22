@@ -1,40 +1,13 @@
 [
 [
-%name "&lt;div&gt;delete all files in &quot;/Users/tarvydas/Dropbox/iwantahamburger&quot;&lt;/div&gt;"
-{"children":[]"connections":[]"id":"cell_11""inputs":[]"name":"&lt;div&gt;delete all files in &quot;/Users/tarvydas/Dropbox/iwantahamburger&quot;&lt;/div&gt;""outputs":["oC"]"synccode":""}]
+%name "noname_1"
+{"children":[]"connections":[]"id":"cell_14""inputs":[]"name":"noname_1""outputs":[]"synccode":""}]
 [
-%name "rename&lt;span style=&quot;font-size: 11px&quot;&gt; &lt;/span&gt;&quot;&lt;span style=&quot;font-size: 11px&quot;&gt;/Users/tarvydas/Dropbox/iwantahamburger/hw_book.md&quot;&lt;/span&gt;&lt;span style=&quot;font-size: 11px&quot;&gt;&amp;nbsp;&lt;/span&gt;&quot;&lt;span style=&quot;font-size: 11px&quot;&gt;/Users/tarvydas/Dropbox/iwantahamburger/book.md&quot;&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;menlo&amp;#34; ; font-size: 11px&quot;&gt;&lt;br&gt;&lt;/span&gt;"
-{"children":[]"connections":[]"id":"cell_13""inputs":[]"name":"rename&lt;span style=&quot;font-size: 11px&quot;&gt; &lt;/span&gt;&quot;&lt;span style=&quot;font-size: 11px&quot;&gt;/Users/tarvydas/Dropbox/iwantahamburger/hw_book.md&quot;&lt;/span&gt;&lt;span style=&quot;font-size: 11px&quot;&gt;&amp;nbsp;&lt;/span&gt;&quot;&lt;span style=&quot;font-size: 11px&quot;&gt;/Users/tarvydas/Dropbox/iwantahamburger/book.md&quot;&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;menlo&amp;#34; ; font-size: 11px&quot;&gt;&lt;br&gt;&lt;/span&gt;""outputs":["oC"]"synccode":""}]
+%name "noname_2"
+{"children":[]"connections":[]"id":"cell_22""inputs":[]"name":"noname_2""outputs":[]"synccode":""}]
 [
-%name "Test Bench"
-{
-"children":["&lt;div&gt;&lt;span&gt;for each file in '&lt;/span&gt;&lt;span style=&quot;font-size: 11px&quot;&gt;/Users/tarvydas/Dropbox/ps/%Hamburger Workbench - A Light Introduction to Ohm-JS'&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 11px&quot;&gt;&amp;nbsp;⇒ «f»&lt;/span&gt;&lt;/div&gt;"]
-"connections":[]
-"id":"cell_6"
-"inputs":[]
-"name":"Test Bench"
-"outputs":[]
-"synccode":""}]
+%name "noname_3"
+{"children":[]"connections":[]"id":"cell_30""inputs":[]"name":"noname_3""outputs":[]"synccode":""}]
 [
-%name "&lt;div&gt;&lt;span&gt;for each file in '&lt;/span&gt;&lt;span style=&quot;font-size: 11px&quot;&gt;/Users/tarvydas/Dropbox/ps/%Hamburger Workbench - A Light Introduction to Ohm-JS'&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 11px&quot;&gt;&amp;nbsp;⇒ «f»&lt;/span&gt;&lt;/div&gt;"
-{
-"children":["&lt;span style=&quot;font-size: 11px&quot;&gt;sequential&lt;br&gt;&lt;/span&gt;"]
-"connections":[]
-"id":"cell_7"
-"inputs":[]
-"name":"&lt;div&gt;&lt;span&gt;for each file in '&lt;/span&gt;&lt;span style=&quot;font-size: 11px&quot;&gt;/Users/tarvydas/Dropbox/ps/%Hamburger Workbench - A Light Introduction to Ohm-JS'&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 11px&quot;&gt;&amp;nbsp;⇒ «f»&lt;/span&gt;&lt;/div&gt;"
-"outputs":[]
-"synccode":""}]
-[
-%name "&lt;span style=&quot;font-size: 11px&quot;&gt;sequential&lt;br&gt;&lt;/span&gt;"
-{
-"children":["&lt;div&gt;delete all files in &quot;/Users/tarvydas/Dropbox/iwantahamburger&quot;&lt;/div&gt;""rename&lt;span style=&quot;font-size: 11px&quot;&gt; &lt;/span&gt;&quot;&lt;span style=&quot;font-size: 11px&quot;&gt;/Users/tarvydas/Dropbox/iwantahamburger/hw_book.md&quot;&lt;/span&gt;&lt;span style=&quot;font-size: 11px&quot;&gt;&amp;nbsp;&lt;/span&gt;&quot;&lt;span style=&quot;font-size: 11px&quot;&gt;/Users/tarvydas/Dropbox/iwantahamburger/book.md&quot;&lt;/span&gt;&lt;span style=&quot;font-family: &amp;#34;menlo&amp;#34; ; font-size: 11px&quot;&gt;&lt;br&gt;&lt;/span&gt;""copy «f» to &quot;/Users/tarvydas/Dropbox/iwantahamburger&quot;"]
-"connections":[]
-"id":"cell_8"
-"inputs":[]
-"name":"&lt;span style=&quot;font-size: 11px&quot;&gt;sequential&lt;br&gt;&lt;/span&gt;"
-"outputs":[]
-"synccode":""}]
-[
-%name "copy «f» to &quot;/Users/tarvydas/Dropbox/iwantahamburger&quot;"
-{"children":[]"connections":[]"id":"cell_9""inputs":[]"name":"copy «f» to &quot;/Users/tarvydas/Dropbox/iwantahamburger&quot;""outputs":["oC"]"synccode":""}]]
+%name "noname_0"
+{"children":[]"connections":[]"id":"cell_6""inputs":[]"name":"noname_0""outputs":[]"synccode":""}]]
