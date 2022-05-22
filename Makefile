@@ -12,10 +12,10 @@ testbench.js: testbench.json
 	(cd json2js ; make dev)
 	cp json2js/testbench.js .
 
-script.json:
+script.json: script.drawio
 	./d2json script.drawio >script.json
 
-script.js: script.json
+script.js: script.json json2js/script.fmt
 	(cd json2js ; make script)
 	cp json2js/script.js .
 

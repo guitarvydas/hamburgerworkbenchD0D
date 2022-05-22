@@ -1,4 +1,4 @@
-
+YYY 
 
 var &lt;div&gt;delete_all_files_in_&quot;/Users/tarvydas/Dropbox/iwantahamburger&quot;&lt;/div&gt;_signature = {
     name: "&lt;div&gt;delete_all_files_in_&quot;/Users/tarvydas/Dropbox/iwantahamburger&quot;&lt;/div&gt;",
