@@ -3,7 +3,7 @@ Main = "❮" Command "❯"
  
 Command =
   | "delete" "all" "files" "in" string          -- delete
-  | "copy" NameRef "to" string                    -- copy
+  | "copy" NameRef "to" string                  -- copy
   | "rename" string string                      -- rename
   | "for" "each" "file" "in" string "⇉" NameDef -- foreach
 

@@ -2,6 +2,7 @@ prep=~/.local/tools/prep
 cwd=`pwd`
 grammar=st.ohm
 identity-format=identity-st.fmt
+format=st.fmt
 src=../script.js
 target=script.js
 
@@ -11,5 +12,5 @@ identity:
 	${prep} '❮' '❯' ${grammar} ${identity-format} ${support} --errorview --inclusive <${src}
 
 preprocess:
-	${prep} '❮' '❯' ${grammar} ${identity-format} ${support} --errorview --inclusive <${src}
+	${prep} '❮' '❯' ${grammar} ${format} ${support} --errorview --inclusive <${src}
 
