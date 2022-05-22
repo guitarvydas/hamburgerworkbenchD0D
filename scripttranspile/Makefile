@@ -5,8 +5,11 @@ identity-format=identity-st.fmt
 src=../script.js
 target=script.js
 
-all: identity
+all: identity preprocess
 
 identity:
-	${prep} '❮[ \n]*delete' '❯' ${grammar} ${identity-format} ${support} --errorview --inclusive <${src}
+	${prep} '❮' '❯' ${grammar} ${identity-format} ${support} --errorview --inclusive <${src}
+
+preprocess:
+	${prep} '❮' '❯' ${grammar} ${identity-format} ${support} --errorview --inclusive <${src}
 
