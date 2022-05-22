@@ -22,7 +22,7 @@ NestedJObject [lb @o rb] = [[${o}]]
     true [k] = [[${k}]]
     false [k] = [[${k}]]
 
-Main [ArrayOfComponents] = [[YYY ${ArrayOfComponents}]]
+Main [ArrayOfComponents] = [[${ArrayOfComponents}]]
 ArrayOfComponents [lb @Components rb] = [[${Components}]]
 Component [ArrayOfSingleComponent] = [[${ArrayOfSingleComponent}]]
 ArrayOfSingleComponent [lb @SingleComponent rb]  = [[${SingleComponent}]]

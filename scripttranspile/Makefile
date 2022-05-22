@@ -12,5 +12,6 @@ identity:
 	${prep} '❮' '❯' ${grammar} ${identity-format} ${support} --errorview --inclusive <${src}
 
 preprocess:
-	${prep} '❮' '❯' ${grammar} ${format} ${support} --errorview --inclusive <${src}
+	${prep} '❮' '❯' ${grammar} ${format} ${support} --errorview --inclusive <${src} >out.js
+
 

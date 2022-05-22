@@ -18,7 +18,7 @@ script.json: script.drawio
 script.js: script.json json2js/script.fmt
 	(cd json2js ; make script)
 	cp json2js/script.js .
-
+	(cd scripttranspile ; make preprocess ; cp out.js ..)
 
 
 main: main.js

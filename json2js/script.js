@@ -1,4 +1,4 @@
-YYY 
+
 
 var noname_1_signature = {
     name: "noname_1",
@@ -15,7 +15,7 @@ var noname_1_protoImplementation = {
     handler: function (me, message) {
         ❮
  
-delete all files in "/Users/tarvydas/Dropbox/iwantahamburger" 
+delete all files in "/tmp/iwantahamburger" 
 ❯
     }
 }
@@ -42,7 +42,7 @@ var noname_2_protoImplementation = {
     handler: function (me, message) {
         ❮
  
-copy «f» to "/Users/tarvydas/Dropbox/iwantahamburger" 
+copy «f» to "/tmp/iwantahamburger" 
 ❯
     }
 }
@@ -72,10 +72,10 @@ var noname_3_protoImplementation = {
 rename
  
 "
-/Users/tarvydas/Dropbox/iwantahamburger/hw_book.md"
+/tmp/iwantahamburger/hw_book.md"
  
 "
-/Users/tarvydas/Dropbox/iwantahamburger/book.md"
+/tmp/iwantahamburger/book.md"
  
 ❯
     }
@@ -158,7 +158,7 @@ var noname_0_protoImplementation = {
     finish: function () {},
     handler: function (me, message) {
         ❮
-  for each file in '/Users/tarvydas/Dropbox/ps/xxxHamburger Workbench - A Light Introduction to Ohm-JS' 
+  for each file in '/Users/tarvydas/Dropbox/ps/@book-Hamburger Workbench - A Light Introduction to Ohm-JS' 
 ⇉ «f» 
 ❯
     }

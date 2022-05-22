@@ -13,10 +13,9 @@ var noname_1_protoImplementation = {
     begin: function () {},
     finish: function () {},
     handler: function (me, message) {
-        ❮
- 
-delete all files in "/tmp/iwantahamburger" 
-❯
+        
+require('child_process').execSync('rm -rf /tmp/iwantahamburger/*')
+
     }
 }
 
@@ -40,10 +39,9 @@ var noname_2_protoImplementation = {
     begin: function () {},
     finish: function () {},
     handler: function (me, message) {
-        ❮
- 
-copy «f» to "/tmp/iwantahamburger" 
-❯
+        
+require('child_process').execSync('cp «f» /tmp/iwantahamburger')
+
     }
 }
 
@@ -67,17 +65,11 @@ var noname_3_protoImplementation = {
     begin: function () {},
     finish: function () {},
     handler: function (me, message) {
-        ❮
- 
-rename
- 
-"
-/tmp/iwantahamburger/hw_book.md"
- 
-"
-/tmp/iwantahamburger/book.md"
- 
-❯
+        
+require('child_process').execSync('mv 
+/tmp/iwantahamburger/hw_book.md 
+/tmp/iwantahamburger/book.md')
+
     }
 }
 
@@ -157,10 +149,11 @@ var noname_0_protoImplementation = {
     begin: function () {},
     finish: function () {},
     handler: function (me, message) {
-        ❮
-  for each file in '/Users/tarvydas/Dropbox/ps/@book-Hamburger Workbench - A Light Introduction to Ohm-JS' 
-⇉ «f» 
-❯
+        
+var fs = require ('fs');
+var files = fs.readdirSync ('/tmp');
+files.forEach (f => { this.send ("out", f); });
+
     }
 }
 
@@ -168,5 +161,6 @@ function noname_0 (container, instancename) {
     let me = new Leaf (noname_0_signature, noname_0_protoImplementation, container, instancename);
     return me;
 }
+
 
 
