@@ -1,0 +1,17 @@
+Main [lb Command rb] = [[${Command}]]
+ 
+Command [kdelete kall kfiles kin s] = [[\
+files = glob.glob('${s}/*')
+for f in files:
+    os.remove (f)
+]]
+
+string [dq1 @cs dq2] = [[${cs}]]
+
+dq [c] = [[${c}]]
+
+NameDef [Name] = [[${Name}]]
+NameRef [Name] = [[${Name}]]
+Name [lb letter @alnums rb] = [[${lb}${letter}${alnums}${rb}]]
+
+

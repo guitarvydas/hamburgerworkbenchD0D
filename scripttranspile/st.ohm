@@ -1,0 +1,15 @@
+st {
+Main = "❮" Command "❯"
+ 
+Command =
+  | "delete" "all" "files" "in" string
+
+string = dq (~dq any)* dq
+dq = "\""
+
+NameDef = Name
+NameRef = Name
+Name = "«" letter alnum* "»"
+
+}
+

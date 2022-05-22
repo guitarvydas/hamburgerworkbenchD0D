@@ -23,6 +23,7 @@
 //   return codefinal
     
 exports.decode = function (s) {
+    console.error (s);
     var code = decodeURIComponent (s);
     var code0 = code
 	.replace (/&gt;/g, '>')
