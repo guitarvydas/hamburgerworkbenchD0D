@@ -30,11 +30,7 @@ next: next.ohm next.fmt fmt.js foreach.hsm
 foreach: foreach.hsm send.ohm send.fmt next.ohm next.fmt
 	cat foreach.hsm \
 	| ${prep} '```' '```' verbatim3.ohm verbatim.fmt --inclusive ${support} \
-	| tee f.0 \
 	| ${prep} '`' '`' verbatim1.ohm verbatim.fmt --inclusive ${support} \
-	| tee f.1 \
 	| ${prep} '⇑' '\n' send.ohm send.fmt ${support} \
-	| tee f.2 \
 	| ${prep} '☞' '\n' next.ohm next.fmt ${support} \
-	| tee f.3 \
 	| ${prep} '.' '$$' hsm.ohm hsm.fmt ${support} --stop=1 --errorview
