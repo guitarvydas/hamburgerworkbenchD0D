@@ -1,0 +1,3 @@
+Send [karrow Name Verbatim] = [[\`this.send (${Name}, ${Verbatim});\`]]
+Name [letter @alnum] = [[${letter}${alnum}]]
+Verbatim [kbt1 @cs kbt2] = [[${cs}]]

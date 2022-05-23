@@ -467,7 +467,7 @@ diagram_fact(target, cell_37, id_CUezxsRruvy4vppBqpLz__2).
 diagram_fact(target, cell_39, id_CUezxsRruvy4vppBqpLz__8).
 diagram_fact(target, cell_9, id_CUezxsRruvy4vppBqpLz__13).
 diagram_fact(value, cell_10, "env").
-diagram_fact(value, cell_11, "&lt;span style=&quot;text-align: center&quot;&gt;❮&lt;/span&gt;&amp;nbsp; for each file in '&lt;span style=&quot;font-size: 11px&quot;&gt;/Users/tarvydas/Dropbox/ps/@book-Hamburger Workbench - A Light Introduction to Ohm-JS'&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 11px&quot;&gt;⇉ «f»&amp;nbsp;&lt;/span&gt;❯").
+diagram_fact(value, cell_11, "&lt;span style=&quot;text-align: center&quot;&gt;❮&lt;/span&gt;&amp;nbsp; for each file in '&lt;span style=&quot;font-size: 11px&quot;&gt;/Users/tarvydas/temp/ps/@book-Hamburger Workbench - A Frivolous Introduction to Ohm-JS'&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 11px&quot;&gt;⇉ «f»&amp;nbsp;&lt;/span&gt;❯").
 diagram_fact(value, cell_13, "baton").
 diagram_fact(value, cell_14, "baton").
 diagram_fact(value, cell_15, "noname_1").
@@ -485,7 +485,7 @@ diagram_fact(value, cell_30, "baton").
 diagram_fact(value, cell_31, "noname_3").
 diagram_fact(value, cell_32, "env").
 diagram_fact(value, cell_33, "env").
-diagram_fact(value, cell_34, "&lt;span style=&quot;text-align: center&quot;&gt;❮&lt;/span&gt;&lt;span style=&quot;font-size: 11px&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(51 , 51 , 51)&quot;&gt;rename&lt;/span&gt;&lt;span style=&quot;color: rgb(51 , 51 , 51) ; font-size: 11px&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(51 , 51 , 51)&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: rgb(51 , 51 , 51) ; font-size: 11px&quot;&gt;/tmp/iwantahamburger/hw_book.md&quot;&lt;/span&gt;&lt;span style=&quot;color: rgb(51 , 51 , 51) ; font-size: 11px&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: rgb(51 , 51 , 51)&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: rgb(51 , 51 , 51) ; font-size: 11px&quot;&gt;/tmp/iwantahamburger/book.md&quot;&lt;/span&gt;&lt;span style=&quot;color: rgb(51 , 51 , 51)&quot;&gt;&amp;nbsp;&lt;/span&gt;❯").
+diagram_fact(value, cell_34, "&lt;div&gt;❮ rename &quot;/tmp/iwantahamburger/hw_book.md&quot; &quot;/tmp/iwantahamburger/book.md&quot; ❯&lt;/div&gt;").
 diagram_fact(value, cell_35, "baton").
 diagram_fact(value, cell_36, "baton").
 diagram_fact(value, cell_38, "env").

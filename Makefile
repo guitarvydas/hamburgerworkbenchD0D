@@ -12,14 +12,19 @@ testbench.js: testbench.json
 	(cd json2js ; make dev)
 	cp json2js/testbench.js .
 
-script.json: script.drawio
+dev:
+	rm script.json
+	make
+
+script.json: script.drawio json2js/script.fmt
 	./d2json script.drawio >script.json
 
 script.js: script.json json2js/script.fmt
 	(cd json2js ; make script)
 	cp json2js/script.js .
 	(cd scripttranspile ; make preprocess ; cp out.js ..)
-
+	mv script.js /tmp/script.js
+	cat cos.js out.js spost.js >script.js
 
 main: main.js
 	node main.js d2f.drawio

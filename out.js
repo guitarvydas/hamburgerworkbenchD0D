@@ -14,7 +14,12 @@ var noname_1_protoImplementation = {
     finish: function () {},
     handler: function (me, message) {
         
-require('child_process').execSync('rm -rf /tmp/iwantahamburger/*')
+console.log ('rm -rf "/tmp/iwantahamburger/*"')
+if (message.etag === "env") {
+  this.env = message.data;
+} else {
+require('child_process').execSync('rm -rf "/tmp/iwantahamburger/*"')
+}
 
     }
 }
@@ -40,7 +45,12 @@ var noname_2_protoImplementation = {
     finish: function () {},
     handler: function (me, message) {
         
-require('child_process').execSync('cp «f» /tmp/iwantahamburger')
+console.log ('cp "«f»" "/tmp/iwantahamburger"');
+if (message.etag === "env") {
+  this.env = message.data;
+} else {
+require('child_process').execSync('cp "«f»" "/tmp/iwantahamburger"')
+}
 
     }
 }
@@ -66,9 +76,13 @@ var noname_3_protoImplementation = {
     finish: function () {},
     handler: function (me, message) {
         
-require('child_process').execSync('mv 
-/tmp/iwantahamburger/hw_book.md 
-/tmp/iwantahamburger/book.md')
+console.log ('mv "/tmp/iwantahamburger/hw_book.md" "/tmp/iwantahamburger/book.md"');
+if (message.etag === "env") {
+  this.env = message.data;
+} else {
+require('child_process').execSync('mv "/tmp/iwantahamburger/hw_book.md" "/tmp/iwantahamburger/book.md"')
+}
+
 
     }
 }
@@ -150,9 +164,15 @@ var noname_0_protoImplementation = {
     finish: function () {},
     handler: function (me, message) {
         
+console.log (`foreach tag=/${message.etag}/`);
+//console.log ('foreach '); console.log (message.etag);
 var fs = require ('fs');
-var files = fs.readdirSync ('/tmp');
-files.forEach (f => { this.send ("out", f); });
+if (message.etag === "env") {
+  this.env = message.data;
+} else {
+var files = fs.readdirSync ("/Users/tarvydas/temp/ps/@book-Hamburger Workbench - A Frivolous Introduction to Ohm-JS");
+files.forEach (f => { me.send ("out", f); });
+}
 
     }
 }

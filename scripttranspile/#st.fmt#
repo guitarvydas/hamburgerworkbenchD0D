@@ -33,9 +33,15 @@ console.log (\`foreach tag=/\${message.etag}/\`);
 var fs = require ('fs');
 if (message.etag === "env") {
   this.env = message.data;
-} else {
+} else if (message.etag === "resume") {
+} else if (message
+
+if (this.state === sIdle) {
 var files = fs.readdirSync ("${s}");
-files.forEach (f => { me.send ("out", f); });
+} else if (this.state
+files.forEach (f => { 
+	         me.send ("out", f); 
+	      });
 }
 ]]
 

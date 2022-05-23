@@ -1,0 +1,5 @@
+send {
+Send = "⇑" Name Verbatim
+Name = letter alnum*
+Verbatim = "`" (~"`" any)+ "`"
+}

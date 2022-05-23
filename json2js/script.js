@@ -67,17 +67,8 @@ var noname_3_protoImplementation = {
     begin: function () {},
     finish: function () {},
     handler: function (me, message) {
-        ❮
- 
-rename
- 
-"
-/tmp/iwantahamburger/hw_book.md"
- 
-"
-/tmp/iwantahamburger/book.md"
- 
-❯
+        ❮ rename "/tmp/iwantahamburger/hw_book.md" "/tmp/iwantahamburger/book.md" ❯
+
     }
 }
 
@@ -158,7 +149,7 @@ var noname_0_protoImplementation = {
     finish: function () {},
     handler: function (me, message) {
         ❮
-  for each file in '/Users/tarvydas/Dropbox/ps/@book-Hamburger Workbench - A Light Introduction to Ohm-JS' 
+  for each file in '/Users/tarvydas/temp/ps/@book-Hamburger Workbench - A Frivolous Introduction to Ohm-JS' 
 ⇉ «f» 
 ❯
     }
