@@ -9,9 +9,10 @@ Transition =
   | "#" "#" "#" TransitionName verbatim+
 
 verbatim =
-  | "```" (~"```" any)+ "```"
-  | "`" (~"`" any)+ "`"
+  | "⟪" verbatim "⟫"  -- rec
+  | (~vbracket any)+  -- bottom
   
+vbracket = "⟪" | "⟫"
 Name = letter alnum*
 StateName = "*" Name "*"
 TransitionName = "*" "*" Name "*" "*"

@@ -6,7 +6,8 @@ Code [k1 k2 @Name @Code] = [[\nproc ${Name} \{\n${Code}\n\}]]
 
 Transition [k1 k2 k3 TransitionName @Body] = [[\non ${TransitionName} \{\n${Body}\n\}]]
 
-verbatim [t1 @cs t2] = [[‟${fmt.cleanup (cs)}”]]
+verbatim_rec [t1 v t2] = [[${v}]]
+verbatim_bottom [@cs] = [[${cs}]]
   
 Name [letter @alnum] = [[${letter}${alnum}]]
 StateName [k1 Name k2] = [[${Name}]]
