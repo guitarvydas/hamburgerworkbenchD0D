@@ -1,20 +1,26 @@
 hsm {
-Machine = Header (State | Code)+
-Header = "#" Name
+Main = MachineHeader "{" (Code | State)+ "}"
 
-State = "#" "#" StateName Transition+
-Code = "#" "#" Name? verbatim+
+Code = Proc | OtherCode
 
-Transition =
-  | "#" "#" "#" TransitionName verbatim+
+Proc = "code" Name Body
+OtherCode = "code" Body
+Body =
+  | stuff? "{" Body "}" Body?  -- rec
+  | stuff                --bottom
 
-verbatim =
-  | "⟪" verbatim* "⟫"  -- rec
-  | (~vsep any)+  -- bottom
-  
-vsep = "⟪" | "⟫" | "#"
-Name = letter alnum*
-StateName = "*" Name "*"
-TransitionName = "*" "*" Name "*" "*"
+stuff = stuffchar+
+stuffchar = ~brace ~keyword any
+
+brace = "{" | "}"
+
+State = "state" Name "{" Transition+ "}"
+Transition = "on" Name Body
+
+MachineHeader = "machine" Name
+
+Name = ~keyword letter alnum+
+
+keyword = "code" | "state"
 }
 

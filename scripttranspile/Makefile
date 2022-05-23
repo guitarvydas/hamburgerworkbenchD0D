@@ -33,4 +33,4 @@ foreach: foreach.hsm send.ohm send.fmt next.ohm next.fmt
 	| ${prep} '`' '`' verbatim1.ohm verbatim.fmt --inclusive ${support} \
 	| ${prep} '⇑' '\n' send.ohm send.fmt ${support} \
 	| ${prep} '☞' '\n' next.ohm next.fmt ${support} \
-	| ${prep} '.' '$$' hsm.ohm hsm.fmt ${support} --stop=1 --errorview
+	| ${prep} '.' '$$' mdhsm.ohm mdhsm.fmt ${support} --stop=1 --errorview

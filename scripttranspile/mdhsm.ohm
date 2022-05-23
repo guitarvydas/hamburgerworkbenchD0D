@@ -1,0 +1,20 @@
+hsm {
+Machine = Header (State | Code)+
+Header = "#" Name
+
+State = "#" "#" StateName Transition+
+Code = "#" "#" Name? verbatim+
+
+Transition =
+  | "#" "#" "#" TransitionName verbatim+
+
+verbatim =
+  | "⟪" verbatim* "⟫"  -- rec
+  | (~vsep any)+  -- bottom
+  
+vsep = "⟪" | "⟫" | "#"
+Name = letter alnum*
+StateName = "*" Name "*"
+TransitionName = "*" "*" Name "*" "*"
+}
+
