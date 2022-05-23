@@ -9,11 +9,12 @@ Transition =
   | "#" "#" "#" TransitionName verbatim+
 
 verbatim =
-  | "⟪" verbatim "⟫"  -- rec
-  | (~vbracket any)+  -- bottom
+  | "⟪" verbatim* "⟫"  -- rec
+  | (~vsep any)+  -- bottom
   
-vbracket = "⟪" | "⟫"
+vsep = "⟪" | "⟫" | "#"
 Name = letter alnum*
 StateName = "*" Name "*"
 TransitionName = "*" "*" Name "*" "*"
 }
+
