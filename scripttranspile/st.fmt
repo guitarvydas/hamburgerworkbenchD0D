@@ -29,20 +29,23 @@ require('child_process').execSync('mv "${from}" "${s}"')
 
 Command_foreach [kfor keach kfile kin s karrow NameDef] = [[
 console.log (\`foreach tag=/\${message.etag}/\`);
-//console.log ('foreach '); console.log (message.etag);
-var fs = require ('fs');
-if (message.etag === "env") {
-  this.env = message.data;
-} else if (message.etag === "resume") {
-} else if (message
 
-if (this.state === sIdle) {
-var files = fs.readdirSync ("${s}");
-} else if (this.state
-files.forEach (f => { 
-	         me.send ("out", f); 
-	      });
-}
+// replace with foreach.mdsm
+
+// //console.log ('foreach '); console.log (message.etag);
+// var fs = require ('fs');
+// if (message.etag === "env") {
+//   this.env = message.data;
+// } else if (message.etag === "resume") {
+// } else if (message
+
+// if (this.state === sIdle) {
+// var files = fs.readdirSync ("${s}");
+// } else if (this.state
+// files.forEach (f => { 
+// 	         me.send ("out", f); 
+// 	      });
+// }
 ]]
 
 string [dq1 @cs dq2] = [[${cs}]]
