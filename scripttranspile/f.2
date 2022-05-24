@@ -1,25 +1,17 @@
-# foreach
+# machine foreach
 ## 
-⟪var files;⟫
+❮list files '/Users/tarvydas/temp/ps/@book-Hamburger Workbench - A Frivolous Introduction to Ohm-JS' ⇉ «files»❯
 
 ## *idle*
   ### **begin**
-    ⟪files = fs.readdirSync ("${s}");⟫
     ☞ generating
-## generating
-    ⟪
-      if (0 === files.length) {
-        ☞ idle
-      } else {
-        var newenv = env.cons ({f: file.unshift ()}, env);
-        ⟪this.send (env, ⟪newenv⟫);⟫
-        ⟪this.send (kick, ⟪true⟫);⟫
-      }
-    ⟫
-    ☞ blocked
+## *generating*
+    ❮? «files».empty ☞ idle❯
+    ⇑ subenv ❮augment env with «files».pop❯
+    ⇑ kick ❮trigger❯
+    ⇢ blocked
 ## *blocked*
    ### **resume**
     ☞ generating
-
 
 

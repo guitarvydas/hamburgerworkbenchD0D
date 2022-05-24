@@ -5,11 +5,11 @@
 ## *idle*
   ### **begin**
     ☞ generating
-## generating
+## *generating*
     `? «files».empty ☞ idle`
     ⇑ subenv `augment env with «files».pop`
     ⇑ kick `trigger`
-    ☞ blocked
+    ⇢ blocked
 ## *blocked*
    ### **resume**
     ☞ generating

@@ -1,10 +1,18 @@
-Machine [Header @Body] = [[${Header}\{\n${Body}\n\}]]
+Machine [Header Decls @Body] = [[${Header}\{\n${Decls}${Body}\n\}]]
 Header [k kmachine Name] = [[machine ${Name} ]]
 
-State [k1 k2 StateName @Transitions] = [[\nstate ${StateName} \{\n${Transitions} \n\}]]
-Code [k1 k2 @Name @Code] = [[\ncode ${Name} \{\n${Code}\n\}]]
+Decls [k1 k2 @Code] = [[\n\{\n${Code}\n\}]]
+
+State [k1 k2 StateName @Code @Transitions Continuation] = [[\nstate ${StateName} \{\n${Code}${Transitions}${Continuation}\n\}]]
 
 Transition [k1 k2 k3 TransitionName @Body] = [[\non ${TransitionName} \{\n${Body}\n\}]]
+
+Code_send [op port v] = [[${op} ${port} ${v}]]
+Code_call [op port v] = [[${op} ${port} ${v}]]
+Code_next [op port v] = [[${op} ${port} ${v}]]
+Code_raw [v] = [[${v}]]
+
+Port [Name] = [[${Name}]]
 
 verbatim_rec [t1 @v t2] = [[${t1}${v}${t2}\n]]
 verbatim_bottom [@cs] = [[${cs}]]

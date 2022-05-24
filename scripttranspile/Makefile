@@ -30,7 +30,9 @@ next: next.ohm next.fmt fmt.js foreach.hsm
 foreach.sm: foreach.mdsm send.ohm send.fmt next.ohm next.fmt
 	cat foreach.mdsm \
 	| ${prep} '```' '```' verbatim3.ohm verbatim.fmt --inclusive ${support} \
+	| tee f.1 \
 	| ${prep} '`' '`' verbatim1.ohm verbatim.fmt --inclusive ${support} \
+	| tee f.2 \
 	| ${prep} '.' '$$' mdsm.ohm mdsm.fmt ${support} --stop=1 --errorview \
 	| tee foreach.sm \
 	| cat -
@@ -47,4 +49,5 @@ foreach : foreach.sm
 
 dev:
 	rm foreach.sm
+	rm -f f.*
 	make foreach.sm

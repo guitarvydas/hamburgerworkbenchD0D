@@ -1,8 +1,7 @@
 machine foreach {
 
-code  {
+{
 ❮list files '/Users/tarvydas/temp/ps/@book-Hamburger Workbench - A Frivolous Introduction to Ohm-JS' ⇉ «files»❯
-
 
 }
 state idle {
@@ -10,15 +9,13 @@ state idle {
 on begin  {
 ☞ generating
 
-} 
 }
-code generating {
+state generating {
 ❮? «files».empty ☞ idle❯
-    ⇑ subenv ❮augment env with «files».pop❯
-    ⇑ kick ❮trigger❯
-    ☞ blocked
+⇑ subenv ❮augment env with «files».pop❯
+⇑ kick ❮trigger❯
+⇢ blocked
 
-}
 state blocked {
 
 on resume  {
@@ -26,6 +23,8 @@ on resume  {
 
 
 
-} 
+}
+}
+}
 }
 }
