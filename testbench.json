@@ -14,7 +14,7 @@
     {
       "children": [],
       "connections": [],
-      "id":"cell_14",
+      "id":"cell_15",
       "inputs": ["go" ],
       "name":"Input Text",
       "outputs": ["text" ],
@@ -25,7 +25,7 @@
     {
       "children": [],
       "connections": [],
-      "id":"cell_18",
+      "id":"cell_19",
       "inputs": ["phrase" ],
       "name":"Phrase Parser",
       "outputs": ["order no choices", "order with choices", "parse error", "hook error" ],
@@ -36,7 +36,7 @@
     {
       "children": [],
       "connections": [],
-      "id":"cell_30",
+      "id":"cell_31",
       "inputs": ["go" ],
       "name":"junk1",
       "outputs": ["text" ],
@@ -47,7 +47,7 @@
     {
       "children": [],
       "connections": [],
-      "id":"cell_35",
+      "id":"cell_36",
       "inputs": ["go" ],
       "name":"junk2",
       "outputs": ["text" ],
@@ -58,7 +58,7 @@
     {
       "children": [],
       "connections": [],
-      "id":"cell_40",
+      "id":"cell_41",
       "inputs": ["text1", "text2" ],
       "name":"junk3",
       "outputs": ["text" ],
@@ -69,7 +69,7 @@
     {
       "children": [],
       "connections": [],
-      "id":"cell_46",
+      "id":"cell_47",
       "inputs": ["in" ],
       "name":"fanout",
       "outputs": ["out1", "out2" ],
@@ -80,7 +80,7 @@
     {
       "children": [],
       "connections": [],
-      "id":"cell_53",
+      "id":"cell_52",
       "inputs": ["in" ],
       "name":"fanout x",
       "outputs": ["out1", "out2" ],
@@ -91,7 +91,7 @@
     {
       "children": [],
       "connections": [],
-      "id":"cell_59",
+      "id":"cell_58",
       "inputs": ["in1", "in2", "in3" ],
       "name":"fanin",
       "outputs": ["out" ],
@@ -103,7 +103,11 @@
       "children": ["HTML Button", "Input Text", "junk1", "junk2", "junk3", "fanout", "fanout x", "fanin", "Order Taker" ],
       "connections": [
 	{
-	  "receivers": [ {"receiver": {"component":"fanout", "port":"in"}} ],
+	  "receivers": [ {"receiver": {"component":"junk1", "port":"go"}} ],
+	  "senders": [ {"sender": {"component":"HTML Button", "port":"click"}} ]
+	},
+	{
+	  "receivers": [ {"receiver": {"component":"junk2", "port":"go"}} ],
 	  "senders": [ {"sender": {"component":"HTML Button", "port":"click"}} ]
 	},
 	{
@@ -117,14 +121,6 @@
 	{
 	  "receivers": [ {"receiver": {"component":"Test Bench", "port":"food order"}} ],
 	  "senders": [ {"sender": {"component":"junk3", "port":"text"}} ]
-	},
-	{
-	  "receivers": [ {"receiver": {"component":"junk1", "port":"go"}} ],
-	  "senders": [ {"sender": {"component":"fanout", "port":"out1"}} ]
-	},
-	{
-	  "receivers": [ {"receiver": {"component":"junk2", "port":"go"}} ],
-	  "senders": [ {"sender": {"component":"fanout", "port":"out2"}} ]
 	},
 	{
 	  "receivers": [ {"receiver": {"component":"Test Bench", "port":"food order"}} ],

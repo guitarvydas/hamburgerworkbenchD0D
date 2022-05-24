@@ -14,20 +14,20 @@
 {
 "children":[]
 "connections":[]
-"id":"cell_14"
+"id":"cell_15"
 "inputs":["go"]
 "name":"Input Text"
 "outputs":["text"]
 "synccode":"&lt;div&gt;console.log ('input 1');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, getText ('src'));&lt;/div&gt;"}]
 [
 %name "Phrase Parser"
-{"children":[]"connections":[]"id":"cell_18""inputs":["phrase"]"name":"Phrase Parser""outputs":["order no choices""order with choices""parse error""hook error"]"synccode":""}]
+{"children":[]"connections":[]"id":"cell_19""inputs":["phrase"]"name":"Phrase Parser""outputs":["order no choices""order with choices""parse error""hook error"]"synccode":""}]
 [
 %name "junk1"
 {
 "children":[]
 "connections":[]
-"id":"cell_30"
+"id":"cell_31"
 "inputs":["go"]
 "name":"junk1"
 "outputs":["text"]
@@ -37,7 +37,7 @@
 {
 "children":[]
 "connections":[]
-"id":"cell_35"
+"id":"cell_36"
 "inputs":["go"]
 "name":"junk2"
 "outputs":["text"]
@@ -47,7 +47,7 @@
 {
 "children":[]
 "connections":[]
-"id":"cell_40"
+"id":"cell_41"
 "inputs":["text1""text2"]
 "name":"junk3"
 "outputs":["text"]
@@ -57,7 +57,7 @@
 {
 "children":[]
 "connections":[]
-"id":"cell_46"
+"id":"cell_47"
 "inputs":["in"]
 "name":"fanout"
 "outputs":["out1""out2"]
@@ -67,7 +67,7 @@
 {
 "children":[]
 "connections":[]
-"id":"cell_53"
+"id":"cell_52"
 "inputs":["in"]
 "name":"fanout x"
 "outputs":["out1""out2"]
@@ -77,7 +77,7 @@
 {
 "children":[]
 "connections":[]
-"id":"cell_59"
+"id":"cell_58"
 "inputs":["in1""in2""in3"]
 "name":"fanin"
 "outputs":["out"]
@@ -89,8 +89,16 @@
 "connections":[{
 "receivers":[{
 "receiver":{
-"component":"fanout"
-"port":"in"}}]
+"component":"junk1"
+"port":"go"}}]
+"senders":[{
+"sender":{
+"component":"HTML Button"
+"port":"click"}}]},{
+"receivers":[{
+"receiver":{
+"component":"junk2"
+"port":"go"}}]
 "senders":[{
 "sender":{
 "component":"HTML Button"
@@ -119,22 +127,6 @@
 "sender":{
 "component":"junk3"
 "port":"text"}}]},{
-"receivers":[{
-"receiver":{
-"component":"junk1"
-"port":"go"}}]
-"senders":[{
-"sender":{
-"component":"fanout"
-"port":"out1"}}]},{
-"receivers":[{
-"receiver":{
-"component":"junk2"
-"port":"go"}}]
-"senders":[{
-"sender":{
-"component":"fanout"
-"port":"out2"}}]},{
 "receivers":[{
 "receiver":{
 "component":"Test Bench"
