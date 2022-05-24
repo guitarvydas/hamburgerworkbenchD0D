@@ -1,6 +1,6 @@
 hsm {
 Machine = Header (State | Code)+
-Header = "#" Name
+Header = "#" "machine" Name
 
 State = "#" "#" StateName Transition+
 Code = "#" "#" Name? verbatim+

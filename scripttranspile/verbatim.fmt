@@ -1,1 +1,1 @@
-main [k1 @cs k2] = [[⟪${cs}⟫]]
+main [k1 @cs k2] = [[❮${cs}❯]]
