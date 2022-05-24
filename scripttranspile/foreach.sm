@@ -1,24 +1,21 @@
 machine foreach{
 
 code  {
-var files;
+❮ lsfiles '/Users/tarvydas/temp/ps/@book-Hamburger Workbench - A Frivolous Introduction to Ohm-JS'  ⇉ «files» ❯
+
+
 }
 state idle {
 
 on begin {
-files = fs.readdirSync ("${s}");☞ generating
+☞ generating
 
 } 
 }
 code generating {
-
-      if (0 === files.length) {
-        ☞ idle
-      } else {
-        var newenv = env.cons ({f: file.unshift ()}, env);
-        ⇑ env newenv
-        ⇑ kick true
-      }
+❮ ? «files».empty ☞ idle ❯
+    ⇑ subenv ❮ augment env with «files».pop ❯
+    ⇑ kick ❮ trigger ❯
     ☞ blocked
 
 }

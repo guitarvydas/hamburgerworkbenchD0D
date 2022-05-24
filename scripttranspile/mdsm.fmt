@@ -6,7 +6,7 @@ Code [k1 k2 @Name @Code] = [[\ncode ${Name} \{\n${Code}\n\}]]
 
 Transition [k1 k2 k3 TransitionName @Body] = [[\non ${TransitionName} \{\n${Body}\n\}]]
 
-verbatim_rec [t1 @v t2] = [[${v}]]
+verbatim_rec [t1 @v t2] = [[${t1}${v}${t2}\n]]
 verbatim_bottom [@cs] = [[${cs}]]
   
 Name [letter @alnum] = [[${letter}${alnum}]]
