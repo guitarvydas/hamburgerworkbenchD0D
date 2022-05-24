@@ -3,7 +3,7 @@ Header [k kmachine Name] = [[machine ${Name} ]]
 
 Decls [k1 k2 @Code] = [[\n\{\n${Code}\n\}]]
 
-State [k1 k2 StateName @Code @Transitions Continuation] = [[\nstate ${StateName} \{\n${Code}${Transitions}${Continuation}\n\}]]
+State [k1 k2 StateName @Code @Transitions] = [[\nstate ${StateName} \{\n${Code}${Transitions}\n\}]]
 
 Transition [k1 k2 k3 TransitionName @Body] = [[\non ${TransitionName} \{\n${Body}\n\}]]
 

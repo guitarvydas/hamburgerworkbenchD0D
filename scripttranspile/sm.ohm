@@ -1,0 +1,30 @@
+sm {
+
+Main = "machine" Name "{" Declarations Body "}"
+
+Declarations = "{" verbatim* "}"
+
+Body = State+
+
+State = "state" Name "{" Code* Transition* "}"
+Transition = "on" Name "{" Code+ "}"
+
+Code =
+  | "⇑" Port verbatim -- send
+  | "☞" Port          -- call
+  | "⇢" Port          -- next
+  | verbatim          -- raw
+  
+Port = Name
+
+
+verbatim = "❮" stuff+ "❯"
+
+stuff = ~vsep any
+  
+vsep = "❮" | "❯" | "{" | "}"
+Name = letter alnum*
+
+
+}
+

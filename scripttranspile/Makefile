@@ -37,6 +37,12 @@ foreach.sm: foreach.mdsm send.ohm send.fmt next.ohm next.fmt
 	| tee foreach.sm \
 	| cat -
 
+foreach.pseudo.sm: foreach.sm
+	cat foreach.sm \
+	| ${prep} '.' '$$' sm.ohm sm.pseudo.fmt ${support} \
+	| tee foreach.pseudo.sm \
+	| cat -
+
 foreach.js: foreach.sm send.ohm send.fmt next.ohm next.fmt
 
 foreach : foreach.sm
@@ -50,4 +56,4 @@ foreach : foreach.sm
 dev:
 	rm foreach.sm
 	rm -f f.*
-	make foreach.sm
+	make foreach.pseudo.sm

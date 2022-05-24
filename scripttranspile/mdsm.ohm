@@ -4,7 +4,7 @@ Header = "#" "machine" Name
 
 Decls = "#" "#" verbatim+
 
-State = "#" "#" StateName Code* Transition* State?
+State = "#" "#" StateName Code* Transition*
 
 Transition =
   | "#" "#" "#" TransitionName Code+

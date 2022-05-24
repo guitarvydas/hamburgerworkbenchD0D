@@ -10,12 +10,14 @@ on begin  {
 ☞ generating
 
 }
+}
 state generating {
 ❮? «files».empty ☞ idle❯
 ⇑ subenv ❮augment env with «files».pop❯
 ⇑ kick ❮trigger❯
 ⇢ blocked
 
+}
 state blocked {
 
 on resume  {
@@ -23,8 +25,6 @@ on resume  {
 
 
 
-}
-}
 }
 }
 }

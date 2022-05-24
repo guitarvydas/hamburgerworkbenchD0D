@@ -1,0 +1,24 @@
+Main [kmachine Name lb Declarations Body rb] = [[${kmachine}${Name}${lb}${Declarations}${Body}${rb}]]
+
+Declarations [lb @Verbatim rb] = [[${lb}${Verbatim}${rb}]]
+
+Body [@State] = [[${State}]]
+
+State [kstate Name lb @Code @Transition rb] = [[${kstate}${Name}${lb}${Code}${Transition}${rb}]]
+Transition [kon Name lb @Code rb] = [[${kon}${Name}${lb}${Code}${rb}]]
+
+Code_send [op Port verbatim] = [[${op}${Port}${verbatim}]]
+Code_call [op Port] = [[${op}${Port}]]
+Code_next [op Port] = [[${op}${Port}]]
+Code_raw [v] = [[${v}]]
+  
+Port [Name] = [[${Name}]]
+
+verbatim [lb @stuff rb] = [[${lb}${stuff}${rb}]]
+
+stuff [c] = [[${c}]]
+  
+vsep [c] = [[${c}]]
+Name [letter @alnum] = [[${letter}${alnum}]]
+
+
