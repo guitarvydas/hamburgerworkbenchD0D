@@ -1,4 +1,4 @@
-Main [MachineHeader lb @x rb] = [[${MachineHeader|${lb}${x}${rb}]]
+Main [MachineHeader lb @x rb] = [[${MachineHeader}${lb}${x}${rb}]]
 
 Code [x] = [[${x}]]
 

@@ -1,0 +1,29 @@
+machine foreach{
+
+code  {
+var files;
+}
+state idle {
+
+on begin {
+files = fs.readdirSync ("${s}");return this.generating ());
+} 
+}
+code generating {
+
+      if (0 === files.length) {
+        return this.idle ());
+      } else {
+        var newenv = env.cons ({f: file.unshift ()}, env);
+        this.send (env, newenv);
+        this.send (kick, true);
+      }
+    return this.blocked ());
+}
+state blocked {
+
+on resume {
+return this.generating ());
+} 
+}
+}

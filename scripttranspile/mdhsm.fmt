@@ -1,4 +1,4 @@
-Machine [Header @Body] = [[${Header}${Body}]]
+Machine [Header @Body] = [[${Header}\{\n${Body}\n\}]]
 Header [k Name] = [[machine ${Name}]]
 
 State [k1 k2 StateName @Transitions] = [[\nstate ${StateName} \{\n${Transitions} \n\}]]

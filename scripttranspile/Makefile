@@ -27,12 +27,15 @@ send: send.ohm send.fmt fmt.js foreach.hsm
 next: next.ohm next.fmt fmt.js foreach.hsm
 	${prep} '☞' '\n' next.ohm next.fmt ${support} <foreach.hsm
 
-foreach: foreach.hsm send.ohm send.fmt next.ohm next.fmt
-	cat foreach.hsm \
+foreach: foreach.mdsm send.ohm send.fmt next.ohm next.fmt
+	cat foreach.mdsm \
 	| ${prep} '```' '```' verbatim3.ohm verbatim.fmt --inclusive ${support} \
 	| ${prep} '`' '`' verbatim1.ohm verbatim.fmt --inclusive ${support} \
 	| ${prep} '⇑' '\n' send.ohm send.fmt ${support} \
 	| ${prep} '☞' '\n' next.ohm next.fmt ${support} \
 	| ${prep} '.' '$$' mdhsm.ohm mdhsm.fmt ${support} --stop=1 --errorview \
+	| tee f.5 \
+	| ${prep} '.' '$$' hsm.ohm hsm.fmt ${support} --stop=1 --errorview \
+	| tee f.6 \
 	| cat -
 
