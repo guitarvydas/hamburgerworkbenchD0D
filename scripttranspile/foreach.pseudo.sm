@@ -7,19 +7,22 @@
 ❮state idle {
 
 on begin {
-☞generating
+%proceedto generating
+
 }
 
 }
 ❯
 ❮state generating {
-❮? «files».empty ☞ idle❯⇑subenv❮augment env with «files».pop❯⇑kick❮trigger❯⇢blocked
+❮? «files».empty _next_ idle❯%send subenv ❮augment env with «files».pop❯%send kick ❮trigger❯%nextstate blocked
+
 }
 ❯
 ❮state blocked {
 
 on resume {
-☞generating
+%proceedto generating
+
 }
 
 }

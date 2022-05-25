@@ -5,28 +5,23 @@
 ❮list files '/Users/tarvydas/temp/ps/@book-Hamburger Workbench - A Frivolous Introduction to Ohm-JS' ⇉ «files»❯
 
 }
-%state idle {
+%state idle  {
 
-%on begin  {
-☞ generating
-
+%on begin {
+%proceedto generating
 }
 
 }
-%state generating {
-❮? «files».empty ☞ idle❯
-⇑ subenv ❮augment env with «files».pop❯
-⇑ kick ❮trigger❯
-⇢ blocked
-
+%state generating  {
+❮? «files».empty _next_ idle❯
+%send subenv ❮augment env with «files».pop❯
+%send kick ❮trigger❯
+%nextstate blocked
 }
-%state blocked {
+%state blocked  {
 
-%on resume  {
-☞ generating
-
-
-
+%on resume {
+%proceedto generating
 }
 
 }

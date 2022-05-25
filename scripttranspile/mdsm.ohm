@@ -10,9 +10,9 @@ Transition =
   | "#" "#" "#" TransitionName Code+
 
 Code =
-  | "⇑" Port verbatim -- send
-  | "☞" Port verbatim -- proceedto
-  | "⇢" Port verbatim -- nextstate
+  | "_send_" Port verbatim -- send
+  | "_go_" Name -- proceedto
+  | "_next_" Name -- nextstate
   | verbatim          -- raw
   
 Port = Name
@@ -21,10 +21,11 @@ verbatim =
   | "❮" verbatim* "❯" -- rec
   | stuff+            -- bottom
 
-stuff = ~vsep any
+stuff = ~vsep any | "_"
   
-vsep = "❮" | "❯" | "#"
+vsep = "❮" | "❯" | "#" | "_"
 Name = letter alnum*
-StateName = "*" Name "*"
-TransitionName = "*" "*" Name "*" "*"
+StateName = "*" "*" Name "*" "*"
+TransitionName = "*" Name "*"
 }
+

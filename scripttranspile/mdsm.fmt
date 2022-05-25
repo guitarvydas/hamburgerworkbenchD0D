@@ -8,9 +8,9 @@ State [k1 k2 StateName @Code @Transitions] = [[\n%state ${StateName} \{\n${Code}
 
 Transition [k1 k2 k3 TransitionName @Body] = [[\n%on ${TransitionName} \{\n${Body}\n\}\n]]
 
-Code_send [op port v] = [[${op} ${port} ${v}]]
-Code_proceedto [op port v] = [[${op} ${port} ${v}]]
-Code_nextstate [op port v] = [[${op} ${port} ${v}]]
+Code_send [op port v] = [[%send ${port} ${v}]]
+Code_proceedto [op Name] = [[%proceedto ${Name}]]
+Code_nextstate [op Name] = [[%nextstate ${Name}]]
 Code_raw [v] = [[${v}]]
 
 Port [Name] = [[${Name}]]
@@ -19,5 +19,5 @@ verbatim_rec [t1 @v t2] = [[${t1}${v}${t2}\n]]
 verbatim_bottom [@cs] = [[${cs}]]
   
 Name [letter @alnum] = [[${letter}${alnum}]]
-StateName [k1 Name k2] = [[${Name}]]
-TransitionName [k1 k2 Name k3 k4] = [[${Name} ]]
+TransitionName [k1 Name k2] = [[${Name}]]
+StateName [k1 k2 Name k3 k4] = [[${Name} ]]
