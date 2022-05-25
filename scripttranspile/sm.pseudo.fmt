@@ -1,16 +1,16 @@
-Main [kmachine Name lb Declarations Body rb] = [[❮closure ${Name}\n❮start ???❯\n❮handler ${Name} ${Declarations}${Body}\n❯\n❯]]
+Main [kmachine Name Declarations Body kend] = [[@closure ${Name}\n@start ???\n@handler ${Name} ${Declarations}${Body}\n@endhandler\n@endclosure]]
 
-Declarations [lb @Verbatim rb] = [[\n${Verbatim}]]
+Declarations [kdecls @Verbatim kend] = [[\n${Verbatim}]]
 
 Body [@State] = [[\n${State}]]
 
-State [kstate Name lb @Code @Transition rb] = [[\n❮state ${Name} \{\n${Code}${Transition}\n\}\n❯]]
-Transition [kon Name lb @Code rb] = [[\non ${Name} \{\n${Code}\n\}\n]]
+State [kstate Name @Code @Transition kend] = [[\n@state ${Name} \{\n${Code}${Transition}\n\}\n@endstate]]
+Transition [kon Name @Code kend] = [[\n@on ${Name} \{\n${Code}\n\}\n@endon\n]]
 
-Code_send [op Port verbatim] = [[${op}${Port}${verbatim}]]
-Code_go [op Name] = [[${op}${Name}]]
-Code_next [op Name] = [[${op}${Name}]]
-Code_raw [v] = [[${v}]]
+Code_send [op Port verbatim] = [[\n${op} ${Port} ${verbatim}]]
+Code_go [op Name] = [[\n${op} ${Name}]]
+Code_next [op Name] = [[\n${op} ${Name}]]
+Code_raw [v] = [[ ${v}]]
   
 Port [Name] = [[${Name}]]
 

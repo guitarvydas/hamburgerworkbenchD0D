@@ -1,18 +1,18 @@
 sm {
 
-Main = "%machine" Name "{" Declarations Body "}"
+Main = "%machine" Name Declarations Body "%endmachine"
 
-Declarations = "{" verbatim* "}"
+Declarations = "%decls" verbatim* "%enddecls"
 
 Body = State+
 
-State = "%state" Name "{" Code* Transition* "}"
-Transition = "%on" Name "{" Code+ "}"
+State = "%state" Name Code* Transition* "%endstate"
+Transition = "%on" Name Code+ "%endon"
 
 Code =
-  | "_send_" Port verbatim -- send
-  | "_go_" Port          -- go
-  | "_next_" Port          -- next
+  | "%send" Port verbatim -- send
+  | "%go" Port          -- go
+  | "%next" Port          -- next
   | ~keyword verbatim -- raw
   
 Port = Name
@@ -24,9 +24,10 @@ verbatim =
   
 stuff = ~vsep any
   
-keyword = "%on" | "%state" | "%machine"
+keyword = "%on" | "%state" | "%machine" | "%decls"
+| "%endon" | "%endstate" | "%endmachine" | "%enddecls"
 
-vsep = "❮" | "❯" | "{" | "}"
+vsep = "❮" | "❯" | "%"
 Name = letter alnum*
 
 
