@@ -39,18 +39,18 @@ foreach.sm: foreach.mdsm send.ohm send.fmt next.ohm next.fmt
 
 foreach.pseudo.sm: foreach.sm
 	cat foreach.sm \
-	| ${prep} '.' '$$' sm.ohm sm.pseudo.fmt ${support} \
+	| ${prep} '.' '$$' sm.ohm sm.pseudo.fmt ${support} --stop=1 \
 	| tee foreach.pseudo.sm \
 	| cat -
 
-foreach.js: foreach.sm send.ohm send.fmt next.ohm next.fmt
+# foreach.js: foreach.sm send.ohm send.fmt next.ohm next.fmt
 
-foreach : foreach.sm
-	cat foreach.sm \
-	| ${prep} '.' '$$' hsm.ohm hsm.fmt ${support} --stop=1 --errorview \
-	| ${prep} '⇑' '\n' send.ohm send.fmt ${support} \
-	| ${prep} '☞' '\n' next.ohm next.fmt ${support} \
-	| cat -
+# foreach : foreach.sm
+# 	cat foreach.sm \
+# 	| ${prep} '.' '$$' hsm.ohm hsm.fmt ${support} --stop=1 --errorview \
+# 	| ${prep} '⇑' '\n' send.ohm send.fmt ${support} \
+# 	| ${prep} '☞' '\n' next.ohm next.fmt ${support} \
+# 	| cat -
 
 
 dev:

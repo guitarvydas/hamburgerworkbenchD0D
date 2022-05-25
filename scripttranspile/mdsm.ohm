@@ -11,8 +11,8 @@ Transition =
 
 Code =
   | "⇑" Port verbatim -- send
-  | "☞" Port verbatim -- call
-  | "⇢" Port verbatim -- next
+  | "☞" Port verbatim -- proceedto
+  | "⇢" Port verbatim -- nextstate
   | verbatim          -- raw
   
 Port = Name

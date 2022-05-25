@@ -1,20 +1,21 @@
-Main [kmachine Name lb Declarations Body rb] = [[${kmachine}${Name}${lb}${Declarations}${Body}${rb}]]
+Main [kmachine Name lb Declarations Body rb] = [[❮closure ${Name}\n❮start ???❯\n❮handler ${Name} ${Declarations}${Body}\n❯\n❯]]
 
-Declarations [lb @Verbatim rb] = [[${lb}${Verbatim}${rb}]]
+Declarations [lb @Verbatim rb] = [[\n${Verbatim}]]
 
-Body [@State] = [[${State}]]
+Body [@State] = [[\n${State}]]
 
-State [kstate Name lb @Code @Transition rb] = [[${kstate}${Name}${lb}${Code}${Transition}${rb}]]
-Transition [kon Name lb @Code rb] = [[${kon}${Name}${lb}${Code}${rb}]]
+State [kstate Name lb @Code @Transition rb] = [[\n❮state ${Name}${Code}${Transition}\n❯]]
+Transition [kon Name lb @Code rb] = [[\n❮on ${Name}\n${Code}\n❯]]
 
 Code_send [op Port verbatim] = [[${op}${Port}${verbatim}]]
-Code_call [op Port] = [[${op}${Port}]]
-Code_next [op Port] = [[${op}${Port}]]
+Code_proceedto [op Port] = [[${op}${Port}]]
+Code_nextstate [op Port] = [[${op}${Port}]]
 Code_raw [v] = [[${v}]]
   
 Port [Name] = [[${Name}]]
 
-verbatim [lb @stuff rb] = [[${lb}${stuff}${rb}]]
+verbatim_rec [lb v rb] = [[${lb}${v}${rb}]]
+verbatim_bottom [@stuff] = [[${stuff}]]
 
 stuff [c] = [[${c}]]
   

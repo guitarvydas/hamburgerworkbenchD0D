@@ -11,15 +11,17 @@ Transition = "on" Name "{" Code+ "}"
 
 Code =
   | "⇑" Port verbatim -- send
-  | "☞" Port          -- call
-  | "⇢" Port          -- next
+  | "☞" Port          -- proceedto
+  | "⇢" Port          -- nextstate
   | verbatim          -- raw
   
 Port = Name
 
 
-verbatim = "❮" stuff+ "❯"
-
+verbatim =
+  | "❮" verbatim "❯" -- rec
+  | stuff+           -- bottom
+  
 stuff = ~vsep any
   
 vsep = "❮" | "❯" | "{" | "}"
