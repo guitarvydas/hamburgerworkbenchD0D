@@ -1,12 +1,12 @@
 Machine [Header Decls @Body] = [[${Header}\{\n${Decls}${Body}\n\}]]
-Header [k kmachine Name] = [[\n:machine ${Name} ]]
+Header [k kmachine Name] = [[\n%machine ${Name} ]]
 
 
 Decls [k1 k2 @Code] = [[\n\{\n${Code}\n\}]]
 
-State [k1 k2 StateName @Code @Transitions] = [[\n:state ${StateName} \{\n${Code}${Transitions}\n\}]]
+State [k1 k2 StateName @Code @Transitions] = [[\n%state ${StateName} \{\n${Code}${Transitions}\n\}]]
 
-Transition [k1 k2 k3 TransitionName @Body] = [[\n:on ${TransitionName} \{\n${Body}\n\}\n]]
+Transition [k1 k2 k3 TransitionName @Body] = [[\n%on ${TransitionName} \{\n${Body}\n\}\n]]
 
 Code_send [op port v] = [[${op} ${port} ${v}]]
 Code_proceedto [op port v] = [[${op} ${port} ${v}]]

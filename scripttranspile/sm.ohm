@@ -1,13 +1,13 @@
 sm {
 
-Main = ":machine" Name "{" Declarations Body "}"
+Main = "%machine" Name "{" Declarations Body "}"
 
 Declarations = "{" verbatim* "}"
 
 Body = State+
 
-State = ":state" Name "{" Code* Transition* "}"
-Transition = ":on" Name "{" Code+ "}"
+State = "%state" Name "{" Code* Transition* "}"
+Transition = "%on" Name "{" Code+ "}"
 
 Code =
   | "⇑" Port verbatim -- send
@@ -24,7 +24,7 @@ verbatim =
   
 stuff = ~vsep any
   
-keyword = ":on" | ":state" | ":machine"
+keyword = "%on" | "%state" | "%machine"
 
 vsep = "❮" | "❯" | "{" | "}"
 Name = letter alnum*
