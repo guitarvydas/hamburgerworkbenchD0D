@@ -12,7 +12,9 @@ testbench.js: testbench.json
 	(cd json2js ; make dev)
 	cp json2js/testbench.js .
 
-
+dev:
+	rm script.json
+	make
 
 main: main.js
 	node main.js d2f.drawio

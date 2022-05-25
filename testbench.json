@@ -3,7 +3,7 @@
     {
       "children": [],
       "connections": [],
-      "id":"cell_11",
+      "id":"cell_12",
       "inputs": [],
       "name":"HTML Button",
       "outputs": ["click" ],
@@ -14,7 +14,7 @@
     {
       "children": [],
       "connections": [],
-      "id":"cell_14",
+      "id":"cell_15",
       "inputs": ["go" ],
       "name":"Input Text",
       "outputs": ["text" ],
@@ -25,7 +25,7 @@
     {
       "children": [],
       "connections": [],
-      "id":"cell_18",
+      "id":"cell_20",
       "inputs": ["phrase" ],
       "name":"Phrase Parser",
       "outputs": ["order no choices", "order with choices", "parse error", "hook error" ],
@@ -34,105 +34,19 @@
   ],
   [
     {
-      "children": [],
-      "connections": [],
-      "id":"cell_30",
-      "inputs": ["go" ],
-      "name":"junk1",
-      "outputs": ["text" ],
-      "synccode":"&lt;div&gt;console.log ('junk1');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; var data = {item:&quot;hello&quot;, extras: &quot;h extra&quot;, condiments: &quot;h condiments&quot;};&lt;br&gt;&lt;/div&gt;&lt;div&gt;console.log (data);&lt;/div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, data);"
-    }
-  ],
-  [
-    {
-      "children": [],
-      "connections": [],
-      "id":"cell_35",
-      "inputs": ["go" ],
-      "name":"junk2",
-      "outputs": ["text" ],
-      "synccode":"&lt;div&gt;console.log ('junk2');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;text&quot;, {item:&quot;goodbye&quot;, extras: &quot;g extra&quot;, condiments: &quot;g condiments&quot;});&lt;/div&gt;"
-    }
-  ],
-  [
-    {
-      "children": [],
-      "connections": [],
-      "id":"cell_40",
-      "inputs": ["text1", "text2" ],
-      "name":"junk3",
-      "outputs": ["text" ],
-      "synccode":"&lt;div&gt;console.log ('test 3');&lt;/div&gt;&lt;div&gt;var newdata = Object.assign ({}, message.data);&lt;/div&gt;&lt;div&gt;newdata.item = &quot;test3 ... &quot; + message.data.item;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; console.log (newdata);&lt;/div&gt;&lt;div&gt;me.send (&quot;text&quot;, newdata);&lt;/div&gt;"
-    }
-  ],
-  [
-    {
-      "children": [],
-      "connections": [],
-      "id":"cell_46",
-      "inputs": ["in" ],
-      "name":"fanout",
-      "outputs": ["out1", "out2" ],
-      "synccode":"&lt;div&gt;console.log ('fanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;/div&gt;&lt;div&gt;me.send (&quot;out2&quot;, message.data);&lt;/div&gt;"
-    }
-  ],
-  [
-    {
-      "children": [],
-      "connections": [],
-      "id":"cell_53",
-      "inputs": ["in" ],
-      "name":"fanout x",
-      "outputs": ["out1", "out2" ],
-      "synccode":"&lt;div&gt;console.log ('xfanout');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out1&quot;, message.data);&lt;/div&gt;&lt;div&gt;me.send(&quot;out2&quot;, message.data);&lt;/div&gt;"
-    }
-  ],
-  [
-    {
-      "children": [],
-      "connections": [],
-      "id":"cell_59",
-      "inputs": ["in1", "in2", "in3" ],
-      "name":"fanin",
-      "outputs": ["out" ],
-      "synccode":"&lt;div&gt;console.log ('fan in');&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; me.send (&quot;out&quot;, message.data);&lt;/div&gt;"
-    }
-  ],
-  [
-    {
-      "children": ["HTML Button", "Input Text", "junk1", "junk2", "junk3", "fanout", "fanout x", "fanin", "Order Taker" ],
+      "children": ["HTML Button", "Input Text", "Order Taker" ],
       "connections": [
 	{
-	  "receivers": [ {"receiver": {"component":"fanout", "port":"in"}} ],
+	  "receivers": [ {"receiver": {"component":"Input Text", "port":"go"}} ],
 	  "senders": [ {"sender": {"component":"HTML Button", "port":"click"}} ]
 	},
 	{
-	  "receivers": [ {"receiver": {"component":"fanout x", "port":"in"}} ],
-	  "senders": [ {"sender": {"component":"junk1", "port":"text"}} ]
+	  "receivers": [ {"receiver": {"component":"Order Taker", "port":"phrase"}} ],
+	  "senders": [ {"sender": {"component":"Input Text", "port":"text"}} ]
 	},
 	{
 	  "receivers": [ {"receiver": {"component":"Test Bench", "port":"food order"}} ],
-	  "senders": [ {"sender": {"component":"junk2", "port":"text"}} ]
-	},
-	{
-	  "receivers": [ {"receiver": {"component":"Test Bench", "port":"food order"}} ],
-	  "senders": [ {"sender": {"component":"junk3", "port":"text"}} ]
-	},
-	{
-	  "receivers": [ {"receiver": {"component":"junk1", "port":"go"}} ],
-	  "senders": [ {"sender": {"component":"fanout", "port":"out1"}} ]
-	},
-	{
-	  "receivers": [ {"receiver": {"component":"junk2", "port":"go"}} ],
-	  "senders": [ {"sender": {"component":"fanout", "port":"out2"}} ]
-	},
-	{
-	  "receivers": [ {"receiver": {"component":"Test Bench", "port":"food order"}} ],
-	  "senders": [ {"sender": {"component":"fanout x", "port":"out1"}} ]
-	},
-	{
-	  "receivers": [ {"receiver": {"component":"junk3", "port":"text1"}} ],
-	  "senders": [ {"sender": {"component":"fanout x", "port":"out2"}} ]
+	  "senders": [ {"sender": {"component":"Order Taker", "port":"food order"}} ]
 	}
       ],
       "id":"cell_6",
@@ -146,6 +60,10 @@
     {
       "children": ["Phrase Parser" ],
       "connections": [
+	{
+	  "receivers": [ {"receiver": {"component":"Phrase Parser", "port":"phrase"}} ],
+	  "senders": [ {"sender": {"component":"Order Taker", "port":"phrase"}} ]
+	},
 	{
 	  "receivers": [ {"receiver": {"component":"Order Taker", "port":"food order"}} ],
 	  "senders": [ {"sender": {"component":"Phrase Parser", "port":"order no choices"}} ]
@@ -161,10 +79,6 @@
 	{
 	  "receivers": [ {"receiver": {"component":"Order Taker", "port":"food order"}} ],
 	  "senders": [ {"sender": {"component":"Phrase Parser", "port":"hook error"}} ]
-	},
-	{
-	  "receivers": [ {"receiver": {"component":"Phrase Parser", "port":"phrase"}} ],
-	  "senders": [ {"sender": {"component":"Order Taker", "port":"phrase"}} ]
 	}
       ],
       "id":"cell_7",
