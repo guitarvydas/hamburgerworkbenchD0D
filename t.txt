@@ -1,4 +1,0 @@
-copy «f» to "/Users/tarvydas/Dropbox/iwantahamburger"
-
-
-delete all files in /Users/tarvydas/Dropbox/iwantahamburger
