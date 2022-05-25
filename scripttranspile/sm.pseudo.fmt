@@ -8,8 +8,8 @@ State [kstate Name lb @Code @Transition rb] = [[\n❮state ${Name} \{\n${Code}${
 Transition [kon Name lb @Code rb] = [[\non ${Name} \{\n${Code}\n\}\n]]
 
 Code_send [op Port verbatim] = [[${op}${Port}${verbatim}]]
-Code_proceedto [op Port] = [[${op}${Port}]]
-Code_nextstate [op Port] = [[${op}${Port}]]
+Code_go [op Name] = [[${op}${Name}]]
+Code_next [op Name] = [[${op}${Name}]]
 Code_raw [v] = [[${v}]]
   
 Port [Name] = [[${Name}]]

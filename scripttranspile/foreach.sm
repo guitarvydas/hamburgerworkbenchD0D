@@ -8,7 +8,7 @@
 %state idle  {
 
 %on begin {
-%proceedto generating
+%go generating
 }
 
 }
@@ -16,12 +16,12 @@
 ❮? «files».empty _next_ idle❯
 %send subenv ❮augment env with «files».pop❯
 %send kick ❮trigger❯
-%nextstate blocked
+%next blocked
 }
 %state blocked  {
 
 %on resume {
-%proceedto generating
+%go generating
 }
 
 }

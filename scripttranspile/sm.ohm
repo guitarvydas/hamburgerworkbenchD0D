@@ -10,9 +10,9 @@ State = "%state" Name "{" Code* Transition* "}"
 Transition = "%on" Name "{" Code+ "}"
 
 Code =
-  | "⇑" Port verbatim -- send
-  | "☞" Port          -- proceedto
-  | "⇢" Port          -- nextstate
+  | "_send_" Port verbatim -- send
+  | "_go_" Port          -- go
+  | "_next_" Port          -- next
   | ~keyword verbatim -- raw
   
 Port = Name
