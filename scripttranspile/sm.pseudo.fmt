@@ -4,8 +4,8 @@ Declarations [lb @Verbatim rb] = [[\n${Verbatim}]]
 
 Body [@State] = [[\n${State}]]
 
-State [kstate Name lb @Code @Transition rb] = [[\n❮state ${Name}${Code}${Transition}\n❯]]
-Transition [kon Name lb @Code rb] = [[\n❮on ${Name}\n${Code}\n❯]]
+State [kstate Name lb @Code @Transition rb] = [[\n❮state ${Name} \{\n${Code}${Transition}\n\}\n❯]]
+Transition [kon Name lb @Code rb] = [[\non ${Name} \{\n${Code}\n\}\n]]
 
 Code_send [op Port verbatim] = [[${op}${Port}${verbatim}]]
 Code_proceedto [op Port] = [[${op}${Port}]]

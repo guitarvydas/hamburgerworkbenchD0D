@@ -13,7 +13,7 @@ Code =
   | "⇑" Port verbatim -- send
   | "☞" Port          -- proceedto
   | "⇢" Port          -- nextstate
-  | verbatim          -- raw
+  | ~keyword verbatim -- raw
   
 Port = Name
 
@@ -24,9 +24,10 @@ verbatim =
   
 stuff = ~vsep any
   
+keyword = "on"
+
 vsep = "❮" | "❯" | "{" | "}"
 Name = letter alnum*
 
 
 }
-

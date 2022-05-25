@@ -6,10 +6,11 @@ machine foreach {
 }
 state idle {
 
-on begin  ❮
+on begin  {
 ☞ generating
 
-❯
+}
+
 }
 state generating {
 ❮? «files».empty ☞ idle❯
@@ -20,11 +21,12 @@ state generating {
 }
 state blocked {
 
-on resume  ❮
+on resume  {
 ☞ generating
 
 
 
-❯
+}
+
 }
 }

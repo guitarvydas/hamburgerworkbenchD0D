@@ -3,19 +3,25 @@
 ❮handler foreach 
 ❮list files '/Users/tarvydas/temp/ps/@book-Hamburger Workbench - A Frivolous Introduction to Ohm-JS' ⇉ «files»❯
 
-❮state idleon begin  ❮
-☞ generating
+❮state idle {
 
-❯
-❯
-❮state generating❮? «files».empty ☞ idle❯⇑subenv❮augment env with «files».pop❯⇑kick❮trigger❯⇢blocked
-❯
-❮state blockedon resume  ❮
-☞ generating
+on begin {
+☞generating
+}
 
-
-
+}
 ❯
+❮state generating {
+❮? «files».empty ☞ idle❯⇑subenv❮augment env with «files».pop❯⇑kick❮trigger❯⇢blocked
+}
+❯
+❮state blocked {
+
+on resume {
+☞generating
+}
+
+}
 ❯
 ❯
 ❯
